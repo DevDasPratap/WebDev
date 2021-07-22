@@ -1,0 +1,29 @@
+*{
+	
+	}
+
+/*CSS id*/
+div{
+	margin-left: 30px;
+}
+p{
+	font-size: 30px;
+}
+#p10{
+	font-family: cursive;
+}
+
+#p1{
+	margin-left: 50px;
+}
+
+/*CSS Class*/
+
+div{
+	margin-left: 30px;
+}
+p{
+	font-size: 30px;
+}
+
+

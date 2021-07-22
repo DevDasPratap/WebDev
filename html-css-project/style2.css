@@ -1,0 +1,35 @@
+
+body{
+	background-color: #eee;
+	margin: 25px;
+	padding: 10px;
+	border-radius: 10px;
+}
+.hdr{
+	text-align: center;
+}
+.topthing{
+	text-align: center;
+}
+
+h1{
+	color: #4058e0;
+}
+h2{
+	color: #45d492;
+}
+.ftr{
+	color: #5f41b9;
+}
+
+a{
+	color: #5f89b9;
+}
+
+img{
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 7px;
+    width: 150px;
+    height: auto;
+}

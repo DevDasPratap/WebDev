@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>navbar</title>
+	<style>
+		ul{
+			overflow: auto;
+		}
+
+		.navbar{
+			background: rgb(26,111,149);
+            background: linear-gradient(90deg, rgba(26,111,149,1) 3%, rgba(31,66,147,1) 99%);
+			color: white;
+			border-radius: 45px;
+			font-family: sans-serif;
+		}
+		.navbar li{
+			
+			list-style: none;
+			float: left;
+			padding: 16px 16px;
+			margin: 10px 10px;
+			border-radius: 10px;
+		}
+		.navbar li a{
+			text-decoration: none;
+		}
+		a{
+			color: white;
+		}
+		a:hover{
+			color: #eee;
+		}
+		input{
+			float: right;
+			margin-right: 70px;
+            margin-top: 16px;
+            padding: 7px;
+            border-radius: 19px;
+		}
+	</style>
+</head>
+<body>
+<header>
+	<nav class="navbar">
+		<ul>
+			<li> <a href="#">Home</a></li>
+			<li> <a href="#">Service</a></li>
+			<li> <a href="#">About</a></li>
+			<li> <a href="#">Contact</a></li>
+			<li><a href="#">Privacy</a></li>
+			<div>
+				<input type="text" name="search" placeholder="Typing...">
+			</div>
+		</ul>
+	</nav>
+</header>
+</body>
+</html>

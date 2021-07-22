@@ -1,0 +1,149 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+/*CSS For Header*/
+.header{
+	height: 70px;
+	width: 100%;
+	background-color: #37549e;
+	display: flex;
+	justify-content: center;
+}
+
+.container{
+	width: 90%;
+	/*background-color: #eee;*/
+	display: flex;
+}
+
+.logo{
+	height: 70px;
+	width: 15%;
+	/*background-color: #43c788;*/
+	font-size: 46px;
+	font-family: segoe UI;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+}
+
+.nav{
+	height: 70px;
+	width: 30%;
+	/*background-color: #009688;*/
+	display: flex;
+}
+.nav-item{
+	width: 20%;
+	height: 70px;
+	color: white;
+	font-size: 16px;
+	font-family: segoe UI;
+	text-align: center;
+	line-height: 70px;
+	font-weight: bold;
+}
+.nav-item:hover{
+	background-color: #2ab97b;
+	color: rgba(19, 92, 165, 0.5);
+}
+
+.header-container{
+	justify-content: space-between;
+}
+
+/*Banner*/
+.banner{
+	width: 100%;
+	height: 500px;
+	background-color: #eee;
+	background-image: url(./asset/img/img-4.jpg);
+	background-size: cover;
+}
+.overly{
+	height: 500px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+	display: flex;
+	align-items: center;	
+}
+.banner-text{
+	height: 250px;
+	width: 50%;
+	background-color: rgba(19, 92, 165, 0.5);
+	display: flex;
+	align-items: center;
+	color: white;
+}
+.padd{
+	padding: 20px;
+	/*background-color: white;*/
+	font-family: segoe UI;
+}
+
+.banner-title{
+	margin-bottom: 10px;
+}
+a{
+	text-decoration: none;
+	color: white;
+	
+}
+
+.banner-btn{
+	padding: 11px 19px;
+	text-transform: uppercase;
+	background-color: transparent;
+	color: white;
+	font-weight: bold;
+	font-family: segoe UI;
+	border: 2px solid white;
+	border-radius: 8px;
+	transition: 0.4s;
+}
+.banner-description{
+	margin-bottom: 16px;
+}
+
+.banner-btn:hover{
+	background-color: #37549e;
+	color: rgba(19, 92, 165, 0.5);
+}
+
+/*Banner end*/
+
+/*Services*/
+.srevice{
+	padding: 50px 50px;
+	background-color: gray;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	font-family: segoe UI;
+	color: white;
+}
+
+.srevices{
+	height: 400px;
+	width: 40%;
+	background-color: white;
+	display: flex;
+}
+
+.srevice-container{
+	margin-top: 21px;
+}
+
+.srevices-img{
+	width: 40%;
+	height: 200px;
+	background-color: red;
+	display: flex;
+}
+
+.srevices-details{
+	width: 60%;
+	height: 280px;
+	background-color: lightpink;
+}

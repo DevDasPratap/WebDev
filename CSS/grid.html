@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grid CSS</title>
+</head>
+<style>
+	*{
+  margin: 0px;
+  padding: 0px;
+}
+
+.container{
+  
+  width: 90%;
+  margin: 50px auto;
+  border: 2px solid black;
+  display: grid;
+ /* grid-template-rows: 150px 150px;
+  grid-template-columns: 150px 150px 1fr;
+
+  grid-template-columns: 1fr 1fr 1fr;*/
+
+/*repeat*/
+grid-template-rows: repeat(2, 150px);
+grid-template-columns: repeat(3, 1fr);
+
+/*grid-template-columns: repeat( auto-fit, minmax(150px, 200px));*/
+
+
+  /*grid row columns both grap*/
+  /*grid-row-gap: 20px;
+  grid-column-gap: 20px;
+
+  or*/
+
+  grid-gap: 30px;
+
+grid-auto-rows: 150px;
+
+}
+
+.items1{
+  background-color: red;
+  color: white;
+
+}
+.items2{
+  background-color: blue;
+  /*-1 means n time columns*/
+  grid-column: 1/ -1;
+}
+.items3{
+  background-color: cyan;
+}.items4{
+  background-color: lightgreen;
+}.items5{
+  background-color: gray;
+  /*Move grid row*/
+  /*grid-row-start: 1;
+  grid-row-end: 2;*/
+  grid-row: 1/2;
+  /*Move grid Column*/
+  /*grid-column-start: 2;
+  grid-column-end: 3;*/
+
+  grid-column: 2/4;
+
+}
+.items6{
+  background-color: orange;
+
+</style>
+<body>
+<body>
+  <div class="container">
+    <div class="items1">1. This is testing and Practice Grid in CSS :)</div>
+    <div class="items2">2</div>
+    <div class="items3">3</div>
+    <div class="items4">4</div>
+    <div class="items5">5</div>
+    <div class="items6">6</div>
+    
+  </div>
+</body>
+</body>
+</html>

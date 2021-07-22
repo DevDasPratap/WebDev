@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position Tutorial</title>
+    <style>
+        body{
+            width: 100%;
+            height: 1900px;
+        }
+        .box{
+            border: 2px solid red;
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            margin: 2px;
+        }
+        /*position relative: box replace by box2,box4 between*/
+        /*#box3{
+            position: relative;
+            top: 30px;
+            left: 30px;
+        }*/
+
+        /*position absolute: box replace by parent box*/
+        /*#box3{
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+*/
+        /*position fixed: scroll but box fixed*/
+
+        #box3{
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+
+        }
+        /*position sticky: scroll but box sticky used for menu*/
+
+        #box4{
+            position: sticky;
+            top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3">Chat with me</div>
+    <div class="box" id="box4"></div>
+</body>
+
+</html>

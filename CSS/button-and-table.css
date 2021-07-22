@@ -1,0 +1,219 @@
+div.btm{
+	background-color: blue;
+	width: 500px;
+	padding: 10px;
+	height: 10px;
+	margin: 10px;
+}
+
+.btm:hover{
+	background-color: red;
+
+}
+
+.btm:active{
+	background-color: black;
+}
+
+
+
+
+
+
+div.btn {
+    margin: 50px;
+    background-color: #86eaac;
+    color: black;
+    font-size: 16px;
+    padding: 10px;
+    width: 80px;
+    border-radius: 7px;
+    box-shadow: gray 7px 7px 7px;
+    transition: 0.8s;
+    text-align: center;
+ 
+}
+
+div.btn:hover {
+    transform: translate(-7px, -7px);
+    box-shadow: gray 7px 7px 7px;
+    transition: 0.5s;
+}
+
+div.btn:active {
+    transform: translate(5px, 5px);
+    box-shadow: gray 5px 5px 3px;
+    transition: 0.2s;
+}
+
+
+
+
+
+
+
+
+
+.clickhere{
+	
+	background-color: #2256ad;
+	height: 19px;
+	width: 70px;
+	margin: 30px;
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 16px;
+	box-shadow: gray 5px 5px 5px;
+	transition: 0.4s;
+	te
+
+}
+
+.clickhere:hover {
+	transform: translate(-2px, -2px);
+	box-shadow: gray 5px 5px 5px;
+	transition: 0.7s;
+}
+
+.clickhere:active {
+	transform: translate(1px, 1px);
+	box-shadow: gray 5px 5px 5px;
+	transition: 0.2s;
+}
+.clickhere a{
+	color: white;
+	text-decoration: none;
+}
+
+
+
+
+
+
+.container{
+	width: 500px;
+	height: 500px;
+	background-color: lightblue;
+	margin: 40px;
+	
+}
+
+.item{
+	background-color: #3954ca;
+	width: 50px;
+	height: 50px;
+	margin: 30px;
+	border: solid;
+	display: inline-block;
+	animation: bounce 2s;
+	animation-iteration-count: 1;
+	color: white;
+	text-align: center;
+}
+.root{
+	animation-timing-function: ease-in;
+}
+.xman{
+	animation-timing-function: ease-out;
+}
+.spider{
+	animation-timing-function: linear;
+}
+.iron{
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes bounce {
+	0%{
+		background-color: #20c997;
+		transform: scale(2);
+
+	}
+
+	50%{
+		transform: translateY(400px);
+		background-color: #e83e8c;
+
+	}
+
+	100%{
+		background-color: #007bff;
+		transform: scale(2);
+
+	}
+}
+
+
+
+
+
+.game {
+    margin: 50px;
+    background-color: azure;
+    border: dotted black 2px;
+    height: 500px;
+    width: 500px;
+}
+.box {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    border: solid black 1px;
+}
+
+.player {
+    transform: translateY(225px);
+    background-color: dodgerblue;
+    animation: move 4s infinite linear; 
+    animation-play-state: paused;  
+}
+
+/* .player:active {
+    animation-play-state: running;
+} */
+
+.game:active .player {
+    animation-play-state: running;
+}
+
+.enemy {
+    margin-left: 100px;
+    background-color: orangered;
+    animation-name: bounce;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.enemy.one {
+    animation-duration: 3s;
+}
+
+.enemy.two {
+    animation-duration: 5s;
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(450px)
+    }
+}
+
+@keyframes move {
+    50% {
+        transform: translateY(225px) translateX(450px);
+    }
+}
+
+
+
+
+ul ul {
+    visibility: hidden;
+    height: 0;
+}
+
+li:hover > ul {
+    visibility: visible;
+    height: auto;
+}
+

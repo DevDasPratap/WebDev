@@ -1,0 +1,91 @@
+body{
+	background-color: #eee;
+	font-family: sans-serif;
+	margin: 0px;
+}
+
+header{
+	background-image: url("https://static.pexels.com/photos/248515/pexels-photo-248515.png");
+	height: 400px;
+	width: auto;
+	text-align: center;
+	color: white;
+	margin: 0px;
+}
+.first-div{
+	padding-top: 100px; 
+}
+#para-one{
+	margin-bottom: 50px; 
+}
+#btn-one{
+
+	padding: 20px;
+	margin: 10px;
+	bottom: 2px;
+	width: 120px;
+	height: 50px;
+	border-radius: 7px;
+	background-color: black;
+	text-decoration: none;
+	color: white;
+}
+
+#btn-one:hover{
+	background-color: white;
+	color: black;
+	font-style: bold;
+}
+
+#h-one{
+	text-align: center;
+}
+.sc-a{
+	background-color: #eee;
+	height: 180px;
+
+}
+.div-snd{
+	padding: 10px;
+	width: 400px;
+	float: left;
+	font-size: 18px;
+	margin-left: 150px;
+}
+#grid-c{
+	background-color: black;
+	height: 700px;
+	width: auto;
+
+}
+.list{
+	background-color: white;
+	
+	margin-right: 200px;
+	margin-right: 100px; 
+}
+
+.imge{
+	width: 250px;
+	height: auto;
+}
+.sc-c{
+	text-align: center;
+	margin: 30px 50px;
+}
+
+.divsc-d{
+    text-align: center;
+    width: 48%;
+    height: 48%;
+    
+    float: left;
+
+    
+}
+.sc-d{
+	text-align: center;
+}
+.fsdiv-a{
+	background: #2690d4;
+}

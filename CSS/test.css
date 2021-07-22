@@ -1,0 +1,27 @@
+header, footer, #headertop{
+	background-color: rgb(224, 235, 232);
+	
+}
+
+#btn {
+	
+	display: inline-block;
+	
+	font-weight: 400;
+    font-size: 120%;
+    float: right;
+}
+
+nav, a{
+	color: rgb(69, 178, 154);
+	text-decoration: none;
+	margin: 5px;
+}
+
+header{
+	background-color: none;
+}
+
+#cntr{
+	text-align: center;
+}

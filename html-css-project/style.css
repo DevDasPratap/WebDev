@@ -1,0 +1,33 @@
+.container{
+	background-color: #eee;
+	margin: 30px;
+	border-radius: 10px;
+	padding: 10px;
+
+}
+p, h1, h2, h3{
+	margin: 19px;
+	text-align: center;
+}
+h1{
+	font-size: 50px;
+}
+
+img{
+	border-radius: 50%;
+	
+	
+}
+.imgque{
+	text-align: center;
+	
+}
+
+.que{
+	background-color: #ddd;
+	
+	width: auto;
+	padding: 5px;
+	border-radius: 10px;
+	
+}
