@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Full JS Tutorials</title>
+</head>
+<body onresize="resizeFun()" style="font-family: sans-serif;">
+	
+<h1 id="h1" class="efg">Complete JS Tutorials</h1>
+<p id='para'></p>
+
+<!---DOM--->
+<a href="#">a</a>
+<a href="#">b</a>
+<a href="#">c</a>
+<a href="#">d</a>
+<img src="#">
+<img src="#">
+<img src="#">
+<img src="#">
+<div id="ides" class="main-div">
+	<div class="child-div">
+		<p>I am Child 1</p>
+	</div>
+	<div class="child-div">
+		<p>I am Child 4</p>
+	</div>
+	<div class="child-div">
+		<p>I am Child 5</p>
+	</div>
+</div>
+<div class="content" style="background-color: lightblue; margin: 10px; padding: 10px; ">
+	<h2>Different events types in javascript</h2>
+	<div class="button_container">
+		<div class="button_su" style="width: 160px; height: 20px; background-color: orange; padding: 10px; margin: 10px">
+			<span class="su_button_circle"></span>
+			<a href="#" class="button_su_inner" onclick="alert('No one use me')">
+				<span class="button_text_container">
+					Simple inline alert()
+				</span>
+			</a>
+		</div>
+
+
+		<div>
+			<div class="button_su" style="width: 160px; height: 20px; background-color: orange; padding: 10px; margin: 10px">
+			<span class="su_button_circle"></span>
+			<a href="#" class="button_su_inner" onclick="callingFunction()">
+				<span class="button_text_container">
+					By calling Function
+				</span>
+			</a>
+		</div>
+		<script type="text/javascript">
+			const callingFunction = () =>{
+				alert('Most common way of writing functions');
+			}
+		</script>
+
+
+		<div class="button_su" style="width: 160px; height: 20px; background-color: orange; padding: 10px; margin: 10px">
+			<span class="su_button_circle"></span>
+			<a href="#" class="button_su_inner">
+				<span class="button_text_container" id="thirdWay">
+					By Inline Event
+				</span>
+			</a>
+		</div>
+		<script type="text/javascript">
+			const thirdWay = document.getElementById('thirdWay');
+			thirdWay.onclick = function(){
+				alert('Most common way of writing functions by Inline');
+			}
+
+			//Dont use multiple time
+			// thirdWay.onclick = function(){
+			// 	console.log('Most common way of writing functions by Inline');
+			// }
+		</script>
+
+
+		<div class="button_su" style="width: 160px; height: 20px; background-color: orange; padding: 10px; margin: 10px">
+			<span class="su_button_circle"></span>
+			<a href="#" class="button_su_inner" id="fourtWay">
+				<span class="button_text_container">
+					By Event Listeners
+				</span>
+			</a>
+		</div>
+		<script type="text/javascript">
+			const fourtWay = document.querySelector('#fourtWay');
+			fourtWay.addEventListener('click', () =>{
+				alert('I love this way of writing functions By Event Listeners');
+			});
+
+			//Use multiple time
+			// fourtWay.addEventListener('click', () =>{
+			// 	console.log('I love this way of writing functions By Event Listeners');
+			// });
+		</script>
+		</div>
+	</div>
+</div>
+
+
+<div class="content">
+	<h2>Let's see Event Object</h2>
+	<div class="button_container">
+		<div class="button_su" style="width: 160px; height: 20px; background-color: orange; padding: 10px; margin: 10px; border-radius: 4px">
+			<span class="su_button_circle"></span>
+			<a href="#" class="button_su_inner" id="eventObject">
+				<span class="button_text_container">
+					By Event Object
+				</span>
+			</a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	const eventObject = document.getElementById('eventObject');
+	const checkEvent = () =>{
+		alert('This is Event Object');
+		console.log(event);
+		console.log(event.target);
+		console.log(event.type);
+	}
+	eventObject.addEventListener('click', checkEvent);
+</script>
+
+
+<div class="content">
+	<h2>Let's see Mouse Event</h2>
+	<p id="myPara" onmousedown="mouseDown()" onmouseup="mouseUp()" style="background-color: lightblue; padding: 10px; margin: 10px; border-radius: 4px">
+		Click the text! the mouseDown() function is triggered when the mouse button is pressed down over this paragraph, and sets the color of the text to red, the mouseUp() function is triggered when the mouse button is released, and sets the color of the text to green.
+	</p>
+	<script type="text/javascript">
+		function mouseDown(){
+			document.getElementById('myPara').style.color='#blue';
+		}
+		function mouseUp(){
+			document.getElementById('myPara').style.color='#fff';
+		}
+	</script>
+
+
+	<div class="main-div">
+		<div id="box" style="width: 160px; height: 160px; border-radius: 5px; background-color: blue; margin: 10px; padding: 10px;"></div>
+	</div>
+	<script type="text/javascript">
+		const mEnter = document.getElementById('box');
+		mEnter.addEventListener('mouseenter', () =>{
+			mEnter.style.backgroundColor = 'lightgreen';
+			console.log('Mouse enter Bro');
+		});
+		mEnter.addEventListener('mouseleave', () =>{
+			console.log('Mouse leave Bro');
+			mEnter.style.backgroundColor = 'pink';
+		})
+	</script>
+</div>
+
+<div>
+	<h2>Let's see keybord event</h2>
+	<div  style="padding: 10px; margin: 10px; border-radius: 5px; background-color: lightgreen">
+		<p>A function is triggered when the the user is pressing a key in the input field.</p>
+		<br>
+		<input type="text" name="" class="effect-1" onkeypress="keyPress()" onkeydown="keyDown()" onkeyup="keyUp()" style="width: 300px; height: 50px">
+		<p id="keys"></p>
+	</div>
+</div>
+<script type="text/javascript">
+	const keyPress = () => {
+		document.getElementById('keys').innerHTML = `You pressing ${event.key} and it's code is ${event.code}`;
+	}
+	const keyDown = () =>{
+		document.getElementById('keys').innerHTML = `key is down`;
+	}
+	const keyUp = () =>{
+		document.getElementById('keys').innerHTML = `key is up`;
+	}
+</script>
+
+<div style="background-color: lightgreen; border-radius: 5px; padding: 30px; margin: 10px;">
+	<h2>Let's see input event</h2>
+	<label for="">Your name: </label>
+	<input type="text" name="" id="ice" style="border-radius: 5px; padding: 30px; margin: 10px;">
+	<br>
+	<label>Choose an ice Cream flavor: 
+		<select id="iceCreams" name="iceCreams" onchange="selectElement()">
+		<option value="">Select one_</option>
+		<option value="chocolate">Chocolate</option>
+		<option value="vanila">Vanila</option>
+		<option value="staberry">Staberry</option>
+		</select>
+	</label>
+	<br>
+	<div id="result"></div>
+</div>
+<script type="text/javascript">
+	const selectElement = () =>{
+		const inputChange = document.getElementById('ice').value;
+		const iceCreams = document.getElementById('iceCreams').value;
+		const result = document.getElementById('result');
+		result.innerHTML = `Mr ${inputChange} choose ${iceCreams} ice Creams flavor`;
+		console.log(`${inputChange} choose ${iceCreams} ice Creams flavor`);
+	}
+</script>
+
+<div class="main_div">
+	<h2>Event in timing</h2>
+	<!-- <div style="background-color: lightgreen; border-radius: 5px; padding: 30px; margin: 10px;">
+		<p>Went to know my name?</p>
+		<p id="showMyName"></p>
+		<br>
+		<button id="btn" style="background-color: orange; border-radius: 5px; height: 30px; width: 150px; color: white;">Click here</button>
+	</div>
+<script type="text/javascript">
+	const myName = document.querySelector('#showMyName');
+	const btn = document.querySelector('#btn');
+	const showMyName = () => {
+		myName.innerHTML = "Loading.....";
+		setTimeout(() => {
+			myName.innerHTML = `Pratap Das`
+		}, 1000)
+	}
+	btn.addEventListener('click', showMyName);
+</script> -->
+
+<div style="background-color: lightgreen; border-radius: 5px; padding: 30px; margin: 10px;">
+	<p>Click "Try it" . weit 3 second. the page will alert "Hello.</p>
+	<p>Click "Stop" to prevent the first function to execute.</p>
+	<p>(You must click "Stop" before the 2 seconds are up.)</p>
+	<button onclick="myTime = setTimeout(myFunction, 2000)" >Try it</button>
+	<button onclick="clearTimeout(myTime)">Stop it</button>
+</div>
+<script type="text/javascript">
+	function myFunction(){
+		alert("Hello you clicked Try it");
+	}
+</script>
+
+<div style="background-color: lightgreen; border-radius: 5px; padding: 30px; margin: 10px;">
+	<p>Can you stop me when i reach at 5 ?</p>
+	<br>
+	<button id="timeBtn">Click here</button>
+  <button id="stpBtn">Stop</button>
+</div>
+<script type="text/javascript">
+	const stopNum = document.querySelector('p');
+const timeBtn = document.querySelector('#timeBtn');
+const stopInterval = document.querySelector('#stpBtn');
+let timeRef;
+	let myNumbr = 0;
+	
+	const showNumbr = () => {
+		stopNum.innerHTML = "Loading.....";
+		timeRef = setInterval(() => {
+			stopNum.innerHTML = `${myNumbr}`;
+			myNumbr++;
+		}, 1000)
+	}
+	timeBtn.addEventListener('click', showNumbr);
+stopInterval.addEventListener('click', () => {
+  clearInterval(timeRef);
+})
+</script>
+</div>
+
+<!-- <div>
+	<label for="">Your name: </label>
+	<input type="text" name="" id="inputCity">
+	<label>Choose an city: 
+		<select id="selectCity" name="city" onclick="selectElement()">
+		<option value="slectOne">Select one_</option>
+		<option value="india">India</option>
+		<option value="usa">USA</option>
+		<option value="uk">UK</option>
+		<option value="russia">Russia</option>
+		</select>
+	</label>
+
+</div>
+<div>
+	<button style="margin: 10px; height: 50px; width: 160px; cursor: pointer; background-color: orange; color: white; border-radius: 4px;" id="event-listent">Event Listeners</button>
+</div> -->
+
+<!-- Event Propagation(Event bubbling and event capturing)
+Event bubbling -->
+<div style="background-color: lightblue; border: 2px gray solid; width: 200px; height: 100px; margin: 10px" class="parentDiv" id="parentId"> Outer Div
+		<div style="background-color: lightgreen; border: 2px gray solid; width: 100px; height: 50px; position: relative; top: 20px;
+  left: 50px;
+  width: 80px;
+  min-height: 50px;
+  height: auto;" class="childDiv" id="childId">
+			Inner Div
+		</div>
+	</div>
+	<script type="text/javascript">
+		const parentId = document.getElementById('parentId');
+		const childId = document.getElementById('childId');
+		const parentCall = ()=>{
+			alert('Parent div call');
+			console.log('Parent div call');
+		}
+		const childCall = ()=>{
+			alert('Child div call');
+			console.log('Child div call');
+			// event capturing
+			event.stopPropagation();
+		}
+		parentId.addEventListener('click', parentCall, true);
+		childId.addEventListener('click', childCall, true);
+	</script>
+
+	<!-- Higherorder function & callback function -->
+	
+
+<header id="hdr" style="border: 2px solid gray; background-color: gray">Header
+	<div>
+		<ul>
+			<li></li>
+		</ul>
+	</div>
+</header>
+<main id="mymain" class="mClass">
+	<div id="outer">
+		<ul>
+			<li>outer Main li 1</li>
+			<li>outer Main li 2</li>
+			<li>outer Main li 3</li>
+			<li>outer Main li 4</li>
+		</ul>
+		<div id="inner">
+		<ul>
+			<li>inner Main li 1</li>
+			<li>inner Main li 2</li>
+			<li>inner Main li 3</li>
+			<li>inner Main li 4</li>
+		</ul>
+	</div>
+	</div>
+	
+</main>
+<footer id="ftr" class="foter">Footer
+<div>
+		<ul id="ul">
+			<li class="myli">i
+				<li>Inner li</li>
+			</li>
+			<li class="myli">j</li>
+			<li class="myli">k</li>
+			<li class="myli">l</li>
+		</ul>
+	</div>
+
+	<div id="oter" style="background-color: cyan; padding: 21px">
+		<h2>New outer</h2>
+		<div id="iner" style="background-color: orange; padding: 21px">
+			<h2>New Inner</h2>
+		<div style="background-color: gray; padding: 10px; margin: 10px">A</div>
+		<div style="background-color: gray; padding: 10px; margin: 10px">B</div>
+		<div id="child-c" style="background-color: gray; padding: 10px; margin: 10px">C</div>
+		<div style="background-color: gray; padding: 10px; margin: 10px">D</div>
+		<div style="background-color: gray; padding: 10px; margin: 10px">E</div>
+		</div>
+	</div>
+
+	<div id="test-append" style="background-color: gray; width: 1000px; height: 400px;">
+		<p>Hi, this demi text for js pratice area footer div. practice append/ add text insert text/ joining text.</p>
+	</div>
+	<div>
+		<ul id="lists">
+			<li>Coding</li>
+			<li>Programming</li>
+			<li>Deloper</li>
+			<li>Learner</li>
+			
+		</ul>
+	</div>
+	<div>
+		<ul id="fal" class="newClass">
+			<li class="aa">Aaaa</li>
+			<li>Orange</li>
+			<li>Apple</li>
+			<li>Grapes</li>
+			<li>Banana</li>
+			
+		</ul>
+		<ul id="sabji">
+			<li>Carrot</li>
+			<li>Reddish</li>
+			<li class="aa">Aaaa</li>
+			<li>Potatto</li>
+			<li>Tomato</li>
+		</ul>
+	</div>
+	<div>
+		<form action="" onsubmit="submitFun()" style="background-color: gray; padding: 10px">
+			<label for="">Name: </label> <input type="text" name="" value="Hello ra" id="form-name" onfocus="myFocus(this)" onblur="myBlur(this)" oninput="inputFun(this)" onselect="slectFun(this)"><br><br>
+			<label for="">Age: </label> <input type="number" name="" id="form-age" onfocus="myFocus(this)" onblur="myBlur(this)" oninput="inputFun(this)" oninvalid="alert('Please fill this form')" required><br><br>
+			<label id="form-country">Country: </label>
+				<select id="slect" onfocus="myFocus(this)" onblur="myBlur(this)" onchange="changeFun(this)">
+					<option value="India">India</option>
+					<option value="USA">USA</option>
+					<option value="UK">UK</option>
+					<option value="Russia">Russia</option>
+				</select>
+				<input type="submit" name="">
+				<br><br>
+		</form>
+		<div id="form-text" style="border: 2px solid red;">
+			
+		</div>
+	</div>
+	<div style="width: 100%; height: 200px;">
+	<div id="intrval" style="
+	width: 200px;
+	height: 200px;
+	background-color: pink;
+	">
+		
+	</div>
+	<button onclick="stopAni()">Stop Animation</button>	
+	</div>
+
+	<!-- fatch api XML httpRequest -->
+	<!-- <div id="container">
+		
+	</div>
+	<script type="text/javascript">
+		const container = document.querySelector('#container');
+		const request = new XMLHttpRequest();
+		request.open('GET', 'https://restcountries.eu/rest/v2/name/nepal');
+		request.send();
+		//to get the response
+		request.addEventListener('load', function(){
+			console.log(this.responseText);
+			// const data = this.responseText;
+			const [data] = JSON.parse(this.responseText);
+			console.log(data.capital);
+			const htmlData = `
+			<div id="card">
+			<article class="card">
+			<div class="card-body">
+			<img src='${data.flag}' alt=" class="card-body-img"/>
+			<h1 class="card-body-title">
+			${data.name}<span></span>
+			</h1>
+			<p class="card-body-text"> apital : ${data.capital}</p>
+			</div>
+			<div class="card-footer">
+			<div class="card-footer-social">
+			<h3>${datanativeName}</h3>
+			<p>Native language</p>
+			</div>
+			<div class="card-footer-social">
+			<h3> ${datapapulation}</h3>
+			<p>population</p>
+			</div>
+			<div class="card-footer-social">
+			<h3>${data.demonym}</h3>
+			<p>Demonym</p>
+			</div>
+			</div>
+			</article>
+			</div>
+			`;
+			container.insertAdjacentHTML('afterbegin', htmlData);
+		})
+	</script> -->
+<br><br>
+
+
+	<!-- Jokes -->
+	<div class="container" style="width: 400px; height: 200px; border-radius: 5px; background-color: gray; margin: 10px; padding: 10px">
+		<h3>Best Jokes to make your day</h3>
+		<div id="joke" class="joke">Awsome joke is loading....</div>
+		<button id="jokeBtn" class="btn">Next Joke</button>
+	</div>
+	<script type="text/javascript">
+		const jokes = document.querySelector('#joke');
+		const jokeBtn = document.querySelector('#jokeBtn');
+		const generateJokes = () =>{
+			const setHeader = {
+				headers: {
+					accept : "applicaton/json"
+				}
+			}
+			fetch('https://icanhazdadjoke.com/', setHeader).then((res) =>
+				// console.log(res.json());
+				res.json()
+			).then((data) =>{
+				jokes.innerHTML = data.joke;
+			}).catch((error) =>{
+				console.log(error);
+			})
+		}
+		jokeBtn.addEventListener('click', generateJokes);
+		generateJokes();
+	</script>
+</footer>
+<!-- <p>Click the button to display a date:</p>
+	<button id="dateNow" onclick="myFun()">Try it</button> -->
+
+	
+
+<script>
+		// function myFun(){
+		// 	var mytime = new Date().toLocaleTimeString();
+		// 	document.getElementById('dateNow').innerHTML = mytime;
+		// }
+
+
+
+		// (function(){
+		// 	setInterval(() =>{
+		// 		document.getElementById('dateNow').innerHTML = new Date().toLocaleTimeString() + " " +new Date().toLocaleDateString();
+		// 	}, 100)
+		// })();
+	</script>
+	<script type="text/javascript" src="tutorial.js"></script>
+	<style type="text/css">
+		.mClass{
+			background-color: green;
+		}
+		.addMainClass{
+			background-color: blue;
+			color: white;
+		}
+	</style>
+</body>
+</html>

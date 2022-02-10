@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS</title>
+	
+</head>
+<body>
+<h1>Hello World</h1>
+<h4>Hello Worlds</h4>
+<h2 id="demo">Hello And Welcome</h2>
+<p id="demo">Hi, I am learning JavaScript</p>
+<!-- <img id="lightOn" src="https://www.w3schools.com/js/pic_bulbon.gif">
+<img id="lightOff" src="https://www.w3schools.com/js/pic_bulboff.gif">
+<button onclick="document.getElementById('lightOn').src = 'https://www.w3schools.com/js/pic_bulbon.gif'">TrunOn Light</button>
+<button>TrunOff Light</button> -->
+<!-- <button onclick="alert(5 + 5);">Check</button> -->
+<!-- <button onclick="window.print()">This page</button> -->
+<!-- <p id="demo1" onclick="myFun()"></p>
+<p id="demo2" onclick="myFun()"></p> -->
+<button type="button" onclick="myfun()">click</button>
+<p id="mylet" class="mylet">Change: MS</p>
+<p id="myvar">var p</p>
+<p id="mycon">con p</p>
+<p id="js" class="js">For example, document.getElementById('stuff') returns null. So adding .value will cause the error. You are trying to access a DOM element before</p>
+
+<!-- <a href="https://loanpayment-calculator.com/">
+         <img alt="Loan Payment Calculator" src="https://epratap.com/wp-content/uploads/2021/08/Loan-Payment-Calculator.png"
+         width=250" height="250">
+</a> -->
+<!-- <button onclick="visits()">Change</button> -->
+<!-- <button onclick="document.getElementById('mylet').innerHTML = Date()">The time now</button>
+<button onclick="this.innerHTML = Date()">Date And Time</button> -->
+<!-- Colling function -->
+<!-- <button id="datime" onclick="displayDate()">DateTime</button> -->
+<script type="text/javascript">
+
+	let n = 100000;
+	console.log((n * (n+1)) / 2);
+
+	// function sum(n){
+	// 	if(n==0){
+	// 		return 0;
+	// 	}else{
+	// 	return sum(n - 1) + n;	
+	// 	}
+		
+	// }
+	// console.log(sum(3));
+
+	// let total = 0;
+	// let n = 10;
+	// for(let i = 1; i<=n; i++){
+	// 	total += i;
+	// }
+	// console.log(total);
+
+
+	// let headerElement = document.getElementById('mylet');
+	// console.log(headerElement.textContent);
+	// console.log(headerElement.innerText);
+	// console.log(headerElement.innerHTML);
+
+	// var age = 18;
+	// console.log((age >= 18) ? "You can vote" : "You can't vote");
+
+	// if (score = 0) {
+	// 	console.log('Yay, we won the game');
+	// }else{
+	// 	console.log('OMG, we loss the game');
+	// }
+
+	// var year = 2020;
+	// if(year % 4 == 0){
+	// 	if (year % 100 == 0) {
+	// 		console.log('This year ' + year + ' is leap year');
+	// 	}else{
+	// 		console.log('This year ' + year + ' is leap year');
+	// 	}
+		
+	// }else{
+	// 	console.log('This year ' + year + ' is not leap year');
+	// }
+
+	// var tom = 'sunny';
+
+	// if(tom == 'rain'){
+	// 	console.log('take a raincoat');
+	// }else{
+	// 	console.log('No need to take a raincoat');
+	// }
+
+
+	// console.log(document.getElementById('mylet'));
+	// headerElement.textContent = "Hi World";
+	// let txtContent = document.getElementById('js');
+
+	// txtContent.style.fontSize = '30px';
+	// txtContent.style.color = 'blue';
+	// txtContent.style.fontFamily = "Arial";
+
+	
+	// console.log(headerElement.innerText);
+	// console.log(headerElement.textContent);
+
+	// let s1 = "He said, 'This is awesome!'";
+	// let s2 = "He said, 'This is awesome!'";
+	// let s3 = "He said, \'This is awesome!\'";
+	// let s4 = `He said, 'This is awesome!'`;
+	// let s5 = `This string
+	// is multiple lines`;
+	// let s6 = "This string \n in multiple lines";
+	// let name = "pratap";
+	// let s7 = "Good morning " + name;
+	// let s8 = `Good morning ${name}`;
+	// let s9 = `10 + 6 = ${10 + 6}`;
+
+	// function checkThis(){
+	// 	console.log(this)
+	// }
+	// let obj = {
+	// 	a: 10,
+	// 	b: "Hello",
+	// 	c: true,
+	// 	d: function (){
+	// 		console.log(this)
+	// 	},
+	// 	e: {
+	// 		f: 456,
+	// 		g: "Pratap",
+	// 	}
+	// }
+
+	// document.title = "Welcome to JavaScript DOM";
+	// console.log(document.links);
+	// console.log(document.images);
+	// console.log(document.forms);
+	// console.log(document.all);
+	
+	// for(let element of document.all)
+	// {
+	// 	console.log(element);
+	// }
+
+	// console.log (typeof (document.head));
+	// console.log(document.head);
+	// console.log(document.URL);
+	// console.log(document.domain);
+
+
+	// console.dir(typeof document);
+	// document.getElementById("mylet").innerHTML = typeof (document);
+
+	// console.dir(document);
+	// document.getElementById("mylet").innerHTML = document;
+
+	// document.getElementById('myvar').innerHTML = Math.sin(90 * Math.PI / 180);
+	// console.log(Math.sin(90 * Math.PI / 180));
+
+	// document.getElementById('mylet').innerHTML = Math.abs(-4.7);
+	// console.log(Math.abs(-4.7));
+
+	// const date = new Date();
+	// document.getElementById('mylet').innerHTML = new Date();
+	// document.getElementById('myvar').innerHTML = date.getFullYear();
+
+	// new Date()
+ //    new Date(year, month, day, hours, minutes, seconds, milliseconds)
+ //    new Date(milliseconds)
+ //    new Date(date string)
+
+	// const cars = ["Audi", "BMW", "Farari", "Volvo", "Tata"];
+	// document.getElementById('mylet').innerHTML = cars;
+	// console.log(cars);
+	// cars[0] = "Cadilate";
+	// document.getElementById('myvar').innerHTML = cars;
+	// console.log(cars);
+	// cars.push("Honda");
+	// document.getElementById('mycon').innerHTML = cars;
+	// console.log(cars);
+
+	// const numbers = [45, 4, 9, 16, 25];
+
+ //    function myFun(value, index, array){
+ //    	console.log(value);
+ //    	console.log("------");
+ //    	return  value > 18;
+ //    }
+ //    let newNumbers = numbers.some(myFun);
+ //    console.log(newNumbers);
+
+
+	// const numbers = [45, 4, 9, 16, 25];
+
+ //    function myFun(value, index, array){
+ //    	console.log(value);
+ //    	console.log("------");
+ //    	return value > 18;
+ //    }
+ //    let newNumbers = numbers.every(myFun);
+ //    console.log(newNumbers);
+
+
+	// const numbers = [45, 4, 9, 16, 25];
+
+ //    function myFun(total, value, index, array){
+ //    	console.log(total);
+ //    	console.log("------");
+ //    	return total + value;
+ //    }
+ //    let newNumbers = numbers.reduceRight(myFun);
+ //    console.log(newNumbers);
+
+	// const numbers = [45, 4, 9, 16, 25];
+
+ //    function myFun(total, value, index, array){
+ //    	console.log(total);
+ //    	console.log("------");
+ //    	return total + value;
+ //    }
+ //    let newNumbers = numbers.reduce(myFun);
+ //    console.log(newNumbers);
+
+	// const numbers = [45, 4, 9, 16, 25];
+
+ //    function myFun(value, index, array){
+ //    	return value > 10;
+ //    }
+ //    let newNumbers = numbers.filter(myFun);
+ //    console.log(newNumbers);
+
+
+	// const numbers = [45, 4, 9, 16, 25];
+
+ //    function myFun(value){
+ //    	return value * 2;
+ //    }
+ //    let newNumbers = numbers.map(myFun);
+ //    console.log(newNumbers);
+
+
+	// const numbers = [45, 4, 9, 16, 25];
+
+ //    function myFun(value, index, array){
+ //    	console.log(value);
+ //    	console.log(index);
+ //    	console.log(array);
+ //    	console.log("-----");
+ //    }
+ //    numbers.forEach(myFun);
+    
+
+	// let num = [5, 10, 2, 100, 90, 160, 16, 27, 36];
+	// document.getElementById('mylet').innerHTML = num;
+	// document.getElementById('myvar').innerHTML = Math.min.apply(null, num);
+
+	// let num = [5, 10, 2, 100, 90, 160, 16, 27, 36];
+	// document.getElementById('mylet').innerHTML = num;
+	// document.getElementById('myvar').innerHTML = Math.max.apply(null, num);
+
+	// let num = [5, 10, 2, 100, 90, 160, 16, 27, 36];
+	// document.getElementById('mylet').innerHTML = num;
+	// function myfun(){
+	// 	num.sort(function(a, b){
+	// 		return a-b;
+	// 	});
+	// 	document.getElementById('mylet').innerHTML ="Lowest no: " + num[0] + "<br>" + "Heighst no: " + num[num.length - 1];
+	// };
+
+	// let num = [5, 10, 2, 100, 90, 160, 16, 27, 36];
+	// document.getElementById('mylet').innerHTML = num;
+	// function myfun(){
+	// 	num.sort(function(a, b){
+	// 		return 0.5 - Math.random();
+	// 	});
+	// 	document.getElementById('mylet').innerHTML = num;
+	// };
+
+	// let num = [5, 10, 2, 100, 90, 160, 16, 27, 36];
+	// document.getElementById('mylet').innerHTML = num;
+	// function myfun(){
+	// 	num.sort(function(a, b){
+	// 		return b - a;
+	// 	});
+	// 	document.getElementById('mylet').innerHTML = num;
+	// };
+
+	// let num = [5, 10, 2, 100, 90, 160, 16, 27, 36];
+	// document.getElementById('mylet').innerHTML = num;
+	// function myfun(){
+	// 	num.sort(function(a, b){
+	// 		return a - b;
+	// 	});
+	// 	document.getElementById('mylet').innerHTML = num;
+	// };
+
+	// let fruit = ["Apple", "Banana", "Chili", "Pineaple", "Orange", "Lemon"];
+	// document.getElementById('mylet').innerHTML = fruit;
+	// fruit.reverse();
+	// document.getElementById('myvar').innerHTML = fruit;
+	// console.log(fruit);
+
+
+	// let fruit = ["Apple", "Banana", "Chili", "Pineaple", "Orange", "Lemon"];
+	// document.getElementById('mylet').innerHTML = fruit;
+	// fruit.sort();
+	// document.getElementById('myvar').innerHTML = fruit;
+	// console.log(fruit);
+
+	// let fruit = ["Apple", "Banana", "Chili", "Pineaple", "Orange", "Lemon"];
+	// document.getElementById('mylet').innerHTML = fruit;
+	// let change = fruit.slice(1, 3);
+	// document.getElementById('myvar').innerHTML = change;
+	// console.log(fruit);
+
+
+	// let fruit = ["Apple", "Banana", "Chili", "Pineaple", "Orange", "Lemon"];
+	// document.getElementById('mylet').innerHTML = fruit;
+	// let change = fruit.slice(3);
+	// document.getElementById('myvar').innerHTML = change;
+	// console.log(fruit);
+
+	// let fruit = ["Apple", "Banana", "Chili", "Pineaple", "Orange", "Lemon"];
+	// document.getElementById('mylet').innerHTML = fruit;
+	// let change = fruit.slice(1);
+	// document.getElementById('myvar').innerHTML = change;
+	// console.log(fruit);
+
+
+	// const arr1 = ["Cecilie", "Lone"];
+ //    const arr2 = ["Emil", "Tobias", "Linus"];
+ //    const arr3 = ["Robin", "Morgan"];
+ //    const myChildren = arr1.concat(arr2, arr3);
+ //    document.getElementById('mylet').innerHTML = myChildren;
+ //    console.log(myChildren);
+
+	// const myGirls = ["Cecilie", "Lone"];
+ //    const myBoys = ["Emil", "Tobias", "Linus"];
+ //    const myChildren = myGirls.concat(myBoys);
+ //    document.getElementById('mylet').innerHTML = myChildren;
+ //    console.log(myChildren);
+
+	// let fruit = ["Apple", "Banana", "Chili", "Pineaple", "Orange", "Lemon"];
+	// document.getElementById('mylet').innerHTML = fruit;
+	// fruit.splice(2, 0, "Gouava", "Kiwi");
+	// document.getElementById('myvar').innerHTML = fruit;
+	// console.log(fruit);
+
+	// let fruit = ["Apple", "Banana", "Chili", "Pineaple", "Orange", "Lemon"];
+	// document.getElementById('mylet').innerHTML = fruit;
+	// delete fruit [0];
+	// document.getElementById('myvar').innerHTML = fruit;
+	// console.log(fruit);
+
+	// let fruit = ["Apple", "Banana", "Chili", "Pineaple", "Orange", "Lemon"];
+	// document.getElementById('mylet').innerHTML = fruit;
+	// fruit[fruit.length] = "Kiwi";
+	// document.getElementById('myvar').innerHTML = fruit;
+	// console.log(fruit);
+
+	// let fruit = ["Apple", "Banana", "Chili", "Pineaple", "Orange", "Lemon"];
+	// document.getElementById('mylet').innerHTML = fruit;
+	// fruit.unshift();
+	// document.getElementById('myvar').innerHTML = fruit;
+	// console.log(fruit);
+
+
+	// let fruit = ["Apple", "Banana", "Chili", "Pineaple", "Orange", "Lemon"];
+	// document.getElementById('mylet').innerHTML = fruit;
+	// fruit.shift();
+	// document.getElementById('myvar').innerHTML = fruit;
+	// console.log(fruit);
+
+	// let fruit = ["Apple", "Banana", "Chili", "Pineaple", "Orange", "Lemon"];
+	// document.getElementById('myvar').innerHTML = fruit.push("Kiwi");
+	// document.getElementById('mylet').innerHTML = fruit;
+	// console.log(fruit);
+
+	// let fruit = ["Apple", "Banana", "Chili", "Pineaple", "Orange", "Lemon"];
+	// document.getElementById("mylet").innerHTML = fruit.toString();
+	// console.log(fruit);
+	// console.log(fruit.toString());
+	// document.getElementById('mylet').innerHTML = fruit.join(" * ");
+	// document.getElementById("mylet").innerHTML = fruit.pop();
+	// document.getElementById("myvar").innerHTML = fruit;
+	// document.getElementById("mylet").innerHTML = fruit.pop("Pineaple");
+	// console.log(fruit.pop());
+	// document.getElementById('mycon').innerHTML = fruit.push("Kiwi");
+
+	// let fruit = ["Banana", "Mango", "Pineaple", "Orange", "Jackfruit", "Apple"];
+	// console.log(fruit);
+	// fruit.push("Lemon");
+	// console.log(fruit);
+	// fruit[fruit.length] = "Litchi";
+	// console.log(fruit);
+	// fruit[8];
+	// fruit[9];
+	// console.log(fruit[9]);
+
+	// let fruit = ["Banana", "Mango", "Pineaple", "Orange", "Jackfruit", "Apple"];
+	// let flength = fruit.length;
+	// let text = "<ul>";
+	// fruit.forEach(myFun);
+	// text += "</ul>"
+	// document.getElementById('mylet').innerHTML = text;
+	// console.log(text);
+	// function myFun(value){
+	// 	text += "<li>" + value + "</li>";
+	// }
+
+	// let fruit = ["Banana", "Mango", "Pineaple", "Orange", "Jackfruit", "Apple"];
+	// let flength = fruit.length;
+	// let text = "<ul>";
+	// fruit.forEach(myFun);
+	// text += "</ul>"
+	// document.getElementById('mylet').innerHTML = text;
+	// console.log(text);
+	// function myFun(value){
+	// 	text += "<li>" + value + "</li>";
+	// }
+
+	// let fruit = ["Banana", "Mango", "Pineaple", "Orange", "Jackfruit", "Apple"];
+	// let flength = fruit.length;
+	// let text = "<ul>";
+	// fruit.forEach(myFun);
+	// text += "</ul>"
+	// document.getElementById('mylet').innerHTML = text;
+	// console.log(text);
+	// function myFun(value){
+	// 	text += "<li>" + value + "</li>";
+	// }
+
+
+
+	// let fruit = ["Banana", "Mango", "Pineaple", "Orange", "Jackfruit", "Apple"];
+	// flength = fruit.length;
+	// let text = "<ul>";
+	// for (var i = 0; i < flength; i++) {
+	// 	text  += "<li>" + fruit[i] + "</li>";
+	// }
+	// text += "</ul>";
+	// document.getElementById('mylet').innerHTML = text;
+
+	// let fruit = ["Banana", "Mango", "Pineaple", "Jackfruit", "Apple"];
+	// for (var i = 0; i < fruit.length; i++) {
+	// 	console.log(i);
+	// 	console.log(fruit[i]);
+	// }
+
+	// let person = ["fname", "lname", "age", "ocupation"];
+	// console.log(person.length);
+	// console.log(person.sort());
+	// console.log(person.length - 1);
+
+	// let cars = [];
+	// cars[0] = "audi";
+	// cars[1] = "bmw";
+	// cars[2] = "volvo";
+	// cars[3] = "tesla";
+	// cars[4] = "tata";
+	// cars[2] = "suzuki";
+	// console.log(cars);
+	// document.getElementById('mylet').innerHTML = cars;
+	// console.log(typeof cars);
+
+
+	// let person = {firstname: "Pratap", lastname: "Das", age: "25"};
+	// console.log(person);
+	// console.log(person.lastname);
+	// document.getElementById('mylet').innerHTML = person.age;
+
+
+	// let cars = ["adui", "bajaj", "bmw", "tata"];
+	// console.log(cars);
+	// document.getElementById("mylet").innerHTML = cars;
+
+	// let x = 9.91;
+	// document.getElementById('mylet').innerHTML = x.toExponential() + 
+	// "<br>" + x.toExponential(1) + "<br>" + x.toExponential(2) +
+	// "<br>" + x.toExponential(3) + "<br>" + x.toExponential(4);
+	// console.log(x.toExponential()); 
+
+	// let x = 32;
+	// document.getElementById("mylet").innerHTML = "Decimal: " + x.toString(10) + "<br>" + 
+	// "Binary: " + x.toString(2) + "<br>" + "Hexadecimal: " + x.toString(16) + "<br>" + "Octal: " + x.toString(8);
+	// console.log(typeof toString(), toString); 
+
+	// let x = 0xff;
+	// document.getElementById('mylet').innerHTML = x;
+	// console.log(typeof x, x);
+
+	// let x = 10;
+	// let z = "30";
+	// let a = NaN;
+	// document.getElementById('mylet').innerHTML = typeof a;
+	// console.log(typeof NaN);
+
+
+	// let x = 10;
+	// let y = 20;
+	// let z = "30";
+	// document.getElementById('mylet').innerHTML = x + y + z;
+	// console.log(typeof NaN);
+
+
+	// let y = 20;
+	// let z = "Apple";
+	// let a = 20 / "Apple";
+	// document.getElementById('mylet').innerHTML = isNaN(a);
+	// console.log(typeof y, typeof z);
+
+	
+	// let y = 20;
+	// let z = "Apple";
+	// document.getElementById('mylet').innerHTML = y / z;
+	// console.log(typeof y, typeof z);
+
+
+	// let y = "100";
+	// let z = "10";
+	// document.getElementById('mylet').innerHTML = y + z;
+	// console.log(typeof y, typeof z);
+
+	// let x = 10;
+	// let y = 20;
+	// let z = "30";
+	// document.getElementById('mylet').innerHTML = x + y + z;
+	// console.log(typeof x, typeof y, typeof z);
+
+	// let x = 999999999999999;
+	// let y = 9999999999999999;
+	// document.getElementById('mylet').innerHTML = x + "<br>" + y;
+	// console.log(x, y);
+
+	// let x = 3.14;
+	// let y = 3;
+	// document.getElementById('mylet').innerHTML = x + "<br>" + y;
+	// console.log(x, y);
+
+	// let price = 10;
+	// let vat = 0.25;
+	// let total = `Total: ${(price * (1 + vat)).toFixed(2)}`;
+	// document.getElementById('mylet').innerHTML = total;
+
+	// let firstname = "Pratap";
+	// let lastname = "Das";
+	// let text = `My name ${firstname} ${lastname}`;
+	// document.getElementById('mylet').innerHTML = text;
+
+	// let text = `Hello my name is pratap das`;
+	// document.getElementById('mylet').innerHTML = text;
+
+	// let str = "Hi my name is pratap Locate das i am from india";
+	// document.getElementById('mylet').innerHTML = str.endsWith('india');
+
+	// let str = "Hi my name is pratap Locate das i am from india";
+	// document.getElementById('mylet').innerHTML = str.startsWith('hi', 10);
+
+	// let str = "Hi my name is pratap Locate das i am from india";
+	// document.getElementById('mylet').innerHTML = str.startsWith('Hi');
+
+	// let str = "Hi my name is pratap Locate das i am from india";
+	// document.getElementById('mylet').innerHTML = str.startsWith('Hello');
+
+	// let str = "Hi my and name is pratap Locate das i am from india";
+	// document.getElementById('mylet').innerHTML = str.includes('and', 10);
+
+
+	// let str = "Hi my name is pratap Locate hii das i am from hindi india";
+	// document.getElementById('mylet').innerHTML = str.includes("das");
+
+	// let str = "Hi my name is pratap Locate hii das i am from hindi india";
+	// document.getElementById('mylet').innerHTML = str.match(/hi/g);
+
+	// let str = "Hi my name is pratap Locate das i am from india";
+	// document.getElementById('mylet').innerHTML = str.search('Locate');
+
+	// let str = "Hi my name is pratap Locate das i am from india";
+	// document.getElementById('mylet').innerHTML = str.indexOf('Locate', 21);
+
+	// let str = "Hi my name is pratap das";
+	// document.getElementById('mylet').innerHTML = str.indexOf('Das');
+
+	// let str = "Hi my name is pratap das i am from india das";
+	// document.getElementById('mylet').innerHTML = str.lastIndexOf('das');
+
+	// let str = "Hi my name is pratap das";
+	// document.getElementById('mylet').innerHTML = str.indexOf('das');
+
+
+	// let text = "a, b, c, d, e, f, g, h";
+	// let text2 = "a, b, c, d, e, f, g, h";
+	// let text3 = "a | b | c | d | e | f | g | h";
+	// const mArr = text.split(",");
+	// const mArr2 = text.split(" ");
+	// const mArr3 = text.split("|");
+	// document.getElementById("mylet").innerHTML = mArr[0];
+	// console.log(mArr[0]);
+
+	// document.getElementById("mylet").innerHTML = mArr2[0];
+	// console.log(mArr2[0]);
+
+	// document.getElementById("mylet").innerHTML = mArr3[0];
+	// console.log(mArr3[0]);
+
+	// function text1(){
+	// 	let uptxt = document.getElementById('mylet').innerHTML;
+	// 	document.getElementById('mylet').innerHTML = uptxt.toLowerCase();
+	// }
+
+	// let text = "HELLO WELCOME";
+	// let newText = text.toLowerCase();
+	// console.log(text.toLowerCase());
+
+	// let text = "Hello welcome";
+	// let newText = text.toUpperCase();
+	// console.log(text.toUpperCase());
+
+	// function text(){
+	// 	let uptxt = document.getElementById('mylet').innerHTML;
+	// 	document.getElementById('mylet').innerHTML = uptxt.toUpperCase();
+	// }
+
+	// function visits(){
+	// 	let chng = document.getElementById('mylet').innerHTML;
+	// 	document.getElementById('mylet').innerHTML = chng.replace("MS","NedCod");
+	// };
+
+	// let str = "Apple, Banana, Kiwi";
+ //    document.getElementById("mylet").innerHTML = str.substr(7, 6);
+ //    console.log(str.substr(7, 6));
+
+	// let str = "Apple, Banana, Kiwi";
+ //    document.getElementById("mylet").innerHTML = str.substring(7);
+ //    console.log(str.substring(7));
+
+	// let str = "Apple, Banana, Kiwi";
+ //    document.getElementById("mylet").innerHTML = str.slice(-12);
+ //    console.log(str.slice(-12));
+
+	// let str = "Apple, Banana, Kiwi";
+ //    document.getElementById("mylet").innerHTML = str.slice(7);
+ //    console.log(str.slice(7));
+
+	// let str = "Apple, Banana, Kiwi";
+ //    document.getElementById("mylet").innerHTML = str.slice(-12,-6);
+ //    console.log(str.slice(-12,-6));
+
+	// let str = "Applejuise, Banana, Jackfruit";
+	// str.slice(5, 18);
+	// console.log(str.slice(5, 18));
+	// document.getElementById('mylet').innerHTML = str.slice(5, 18);
+
+
+	// let y = "Hello";
+ //    let z = new String("Hello");
+	// let x = new String("World");
+	// console.log(y+x);
+	// console.log(typeof y + " " + typeof x);
+	// console.log(y==x);
+	// console.log(y==z);
+	// console.log(y===z);
+
+	// let y = "sjncvdskl \"shwsefew\" ''ldfbjkdlkj'";
+	// console.log(y);
+	// document.getElementById('mylet').innerHTML = y;
+
+	// let x = "JGJKuhkhsafdi  owurd owqijdociwqudoj";
+	// console.log(x.length);
+	// document.getElementById('mylet').innerHTML = x.length;
+
+
+	function displayDate(){
+		document.getElementById('datime').innerHTML = Date();
+		alert('Time Now');
+	}
+
+
+
+	// let car = {
+	// 	name: "fiat",
+	// 	model: "500",
+	// 	weight: "500kg",
+	// 	color: "black",
+	// 	start: function (){
+	// 		console.log("Car has started");
+	// 		document.getElementById("mylet").innerHTML = car.start;
+	// 	},
+	// 	drives: function (){
+	// 		console.log("Car has drived");
+	// 		document.getElementById("mylet").innerHTML = car.drives;
+	// 	},
+	// 	breaks: function (){
+	// 		console.log("Car has stoped");
+	// 		document.getElementById("mylet").innerHTML = car.breaks;
+	// 	},
+	// };
+	// console.log(car.color);
+	// console.log(car["model"]);
+	// console.log(car.name);
+	// car.start();
+	// car.drives();
+	// car.breaks();
+
+	// const person = {
+	// 	fname: "pratap",
+	// 	lname: "das",
+	// 	add: "india",
+	// 	mob: "1334567890",
+	// 	fullname: function(){
+	// 		return this.fName + " " + this.lname;
+	// 	},
+	// };
+	// document.getElementById('mylet').innerHTML = this.fName + " " + this.lname;
+	// console.log(this.person);
+
+	 // const person = {
+  //    firstName: "John",
+  //    lastName: "Doe",
+  //    age: 50,
+  //    eyeColor: "blue"
+  //    };
+  //    document.getElementById("mylet").innerHTML =
+  //    person.firstName + " is " + person.age + " years old.";
+  //    console.log(person);
+  //    console.log(typeof person);
+
+	// let car = "Fiat";
+ //    document.getElementById("mylet").innerHTML = car;
+
+	// let x = toCelsius(77);
+ //    let text = "The temperature is " + x + " Celsius";
+ //    document.getElementById("mylet").innerHTML = text;
+ //    console.log(text);
+ //    function toCelsius(fahrenheit) {
+ //    return (5/9) * (fahrenheit-32);
+ //    }
+
+	// function sleep(name, time){
+	// 	console.log(name + " now i sleeping from " + time);
+	// }
+	// sleep("Rama", "10pm");
+	// sleep("Sam", "11pm");
+	// sleep("Me", "9pm");
+	// console.log("my name is pratap");
+	// sleep();
+
+
+	// var carName = "bmw";
+	// function myfun(){
+	// 	let carName = "volvo";
+	// 	console.log(carName);
+	// 	document.getElementById("mylet").innerHTML = carName;
+	// }
+	// myfun();
+
+	// console.log(carName);
+
+
+
+	// function ftoc(fahrenheit){
+	// 	return (5/9) * (fahrenheit-32);
+	// }
+	// document.getElementById('mylet').innerHTML = ftoc(77);
+	// console.log(ftoc);
+
+	// let x = mfun(5, 6);
+	// function mfun(c, d){
+	// 	return c + d;
+	// }
+
+	// document.getElementById('mylet').innerHTML = x;
+	// console.log(x);
+
+
+	// function hello(p1, p2){
+	// 	return p1 * p2;
+	// }
+	// let x = 10;
+	// y = 16;
+	// document.getElementById('mylet').innerHTML = hello(x, y);
+	// console.log(hello);
+
+	// const car = ["audi", "bmw", "volvo"];
+	// document.getElementById('mylet').innerHTML = car;
+	// document.getElementById('mylet').innerHTML = car[1];
+	// console.log(car);
+
+	// let x = 10;
+	// let y = 10;
+	// let z = 16;
+
+	// document.getElementById('mylet').innerHTML = (x == y) + "<br>" + (y == z);
+
+
+	// let x = 123e5;
+	// let y = 123e-5;
+	// document.getElementById('mylet').innerHTML = x + "<br>" + y;
+	
+	// console.log(x + " " + y);
+
+
+	// let x;
+	// x = 5;
+	// x = "Hello";
+	// document.getElementById('mylet').innerHTML = x;
+	// console.log(x);
+
+
+	// let x = 100 + 2 * 8 / 5 - 9;
+	// document.getElementById('mylet').innerHTML = x;
+	// console.log(x);
+
+	// let x = 5;
+	// y = 3;
+	// z = Math.pow(x,y);
+	// document.getElementById('mylet').innerHTML = z;
+	// console.log(z);
+
+	// let x = 5;
+	// y = 3;
+	// z = x ** y;
+	// document.getElementById('mylet').innerHTML = z;
+	// console.log(z);
+
+	// var a = 5;
+	// var b = "7";
+	// var c = "Hello";
+	// let d = 9.9;
+	// let e = true;
+
+	// console.log(typeof a);
+	// console.log(typeof b);
+	// console.log(typeof c);
+	// console.log(typeof d);
+	// console.log(typeof e);
+	// document.getElementById('mylet').innerHTML = (typeof a);
+	// document.getElementById('mylet').innerHTML = (typeof b);
+	// document.getElementById('mylet').innerHTML = (typeof c);
+	// document.getElementById('mylet').innerHTML = (typeof d);
+	// document.getElementById('mylet').innerHTML = (typeof f);
+
+
+	// let x = 5;
+	// y = "5" + 5;
+	// z = "Hello" + 5;
+	// a = x + y + z;
+	// document.getElementById("mylet").innerHTML = x;
+	// console.log(x);
+	// document.getElementById("mylet").innerHTML = y;
+	// console.log(y);
+	// document.getElementById("mylet").innerHTML = z;
+	// console.log(z);
+	// document.getElementById("mylet").innerHTML = a;
+	// console.log(a);
+
+	// let x = "what a verry ";
+	// x += "nice day";
+	
+	// document.getElementById('mylet').innerHTML = x;
+	// console.log(x);
+
+	// let x = "Pratap";
+	// y = "Das";
+	// z = x + y;
+	// document.getElementById('mylet').innerHTML = x + " " + y;
+	// console.log(x + " " + y);
+
+	// let x = 2;
+	// y = 3;
+	// z = x ** y;
+	// document.getElementById('mylet').innerHTML = z;
+	// console.log(z);
+
+	// window.alert (carName);
+	// var carName = "audi"; 
+	// alert(carName); 
+
+	// const car = {name:"audi", model:"100", owner:"me", color:"white"};
+	// document.getElementById("mylet").innerHTML = car.name;
+	// console.log(car);
+	// car.color = "black";
+	// document.getElementById("mylet").innerHTML = car.color;
+	// console.log(car);
+
+
+	// const car = ["audi", "bmw", "tesla"];
+	// document.getElementById("mylet").innerHTML = car;
+	// console.log(car);
+	// car[1] = "ducaty";
+	// car.push = "tata";
+	// document.getElementById("mylet").innerHTML = car.push;
+	// console.log(car);
+
+	// const car = {name:"fiat", model:"500", no:"12300", color:"black"};
+	// document.getElementById('mylet').innerHTML = car;
+	// console.log(car);
+	// car.color = "white";
+	// car.owner = "pdas";
+	// document.getElementById('mylet').innerHTML = "car owner: " + car.owner;
+	// console.log(car);
+
+	// const car = ["tata", "bmw", "volvo", "audi"];
+	// document.getElementById('mylet').innerHTML = car;
+	// console.log(car);
+	// car[0] = "maruti";
+	// document.getElementById('mylet').innerHTML = car;
+	// console.log(car);
+
+	// car.push("bajaj");
+	// document.getElementById('mylet').innerHTML = car;
+	// console.log(car);
+
+	// const pi ;
+	//  pi = 4.10;
+
+	// document.getElementById('mylet').innerHTML = pi;
+	// console.log(pi);
+
+// 	try {
+//   carName = "Saab";
+//   let carName = "Volvo";
+// }
+// catch(err) {
+//   document.getElementById("demo").innerHTML = err;
+// }
+
+	// carName = "Volvo";
+	// var carName;
+	// document.getElementById('mylet').innerHTML = carName;
+	// console.log(carName);
+
+
+	// let x = 5;
+	// {
+	// 	let x = 10;
+	// }
+	// {
+	// 	let x = 16;
+	// }
+
+	// document.getElementById('mylet').innerHTML = x;
+	// console.log(x);
+
+	// let x = 10;
+	// let x = "das";
+	// console.log();
+
+	// let x = "pd";
+	// let x = 5;
+	// document.getElementById('mylet').innerHTML = x;
+
+	// var cityName;
+	// cityName = "Haldia";
+	// document.getElementById('mylet').innerHTML = cityName;
+	// var fName, lName;
+	// fName = "Pratap";
+	// lName = "Das";
+	// document.getElementById('mylet').innerHTML = fName + " " + lName;
+
+	// let x, y, z;
+	// x = 2 + 8;
+	// y = x + 6;
+	// z = y + x;
+
+	// document.getElementById('mylet').innerHTML = z;
+
+	// let x;
+	// x = 8;
+	// y = 2;
+	// z = x + y;
+
+	// document.getElementById('mylet').innerHTML = z * 7;
+
+	// function myFun() {
+	// 	// body...
+	// 	document.getElementById("demo1").innerHTML = "Hekko";
+	// 	document.getElementById("demo2").innerHTML = "Hiiii";
+	// }
+	// document.getElementById('demo').innerHTML = "Hello Dolly";
+		// document.getElementById("demo").innerHTML = "Hello JavaScript";
+
+		// document.getElementById("demo").innerHTML = (5 +5);
+
+		// document.write(5+5);
+
+		// console.log(5+5);
+
+		// let x, y, z;
+		// x = 8,
+		// y = 10,
+		// z = x + y;
+		// document.getElementById('demo').innerHTML = "The value of z is = " + (x + y);
+
+
+</script>
+</body>
+</html>

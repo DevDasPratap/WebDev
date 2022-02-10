@@ -1,0 +1,45 @@
+<!-- fatch api XML httpRequest -->
+	<div id="container" style="width: 400px; height: 400px; background-color: gray">
+		
+	</div>
+	<script type="text/javascript">
+		const container = document.querySelector('#container');
+		const request = new XMLHttpRequest();
+		request.open('GET', 'https://api.first.org/data/v1/countries/nepal');
+		request.send();
+		//to get the response
+		request.addEventListener('load', function(){
+			console.log(this.responseText);
+			// const data = this.responseText;
+			const [data] = JSON.parse(this.responseText);
+			console.log(data.capital);
+			const htmlData = `
+			<div id="card">
+			<article class="card">
+			<div class="card-body">
+			<img src='${data.flag}' alt=" class="card-body-img"/>
+			<h1 class="card-body-title">
+			${data.name}<span></span>
+			</h1>
+			<p class="card-body-text"> apital : ${data.capital}</p>
+			</div>
+			<div class="card-footer">
+			<div class="card-footer-social">
+			<h3>${datanativeName}</h3>
+			<p>Native language</p>
+			</div>
+			<div class="card-footer-social">
+			<h3> ${datapapulation}</h3>
+			<p>population</p>
+			</div>
+			<div class="card-footer-social">
+			<h3>${data.demonym}</h3>
+			<p>Demonym</p>
+			</div>
+			</div>
+			</article>
+			</div>
+			`;
+			container.insertAdjacentHTML('afterbegin', htmlData);
+		})
+	</script>
