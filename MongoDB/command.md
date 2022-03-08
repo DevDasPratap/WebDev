@@ -61,21 +61,26 @@ ecom    0.000GB
 local   0.000GB
 
  > use shop
+ 
 switched to db shop
 
  > show collections
 
  > db.createCollection('products')
+ 
 { "ok" : 1 }
 
  > show collections
-products
+
+ products
 
  > db.createCollection('users')
-{ "ok" : 1 }
+
+ { "ok" : 1 }
 
  > show collections
-products
+
+ products
 users
 
  > db.products.insertOne({name: 'keybord', price: 250})
@@ -85,38 +90,49 @@ users
 }
 
  > db.products.find()
-{ "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
-> db.products.insertOne({name: 'monitor', price: 2500})
-{
+
+ { "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
+
+ > db.products.insertOne({name: 'monitor', price: 2500})
+
+ {
         "acknowledged" : true,
         "insertedId" : ObjectId("6226eab3e3048a1ec408e51b")
 }
 
  > db.products.find()
-{ "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
+
+ { "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
 { "_id" : ObjectId("6226eab3e3048a1ec408e51b"), "name" : "monitor", "price" : 2500 }
-> db.products.insertOne({name: 'mouse', price: 300})   
-{
+
+ > db.products.insertOne({name: 'mouse', price: 300})   
+
+ {
         "acknowledged" : true,
         "insertedId" : ObjectId("6226eacde3048a1ec408e51c")
 }
 
  > db.products.find()
-{ "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
+
+ { "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
 { "_id" : ObjectId("6226eab3e3048a1ec408e51b"), "name" : "monitor", "price" : 2500 }
 { "_id" : ObjectId("6226eacde3048a1ec408e51c"), "name" : "mouse", "price" : 300 }
-> db.products.find({price: 250})
-{ "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
+
+ > db.products.find({price: 250})
+
+ { "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
 
  > db.products.findOne({price: 250})
-{
+
+ {
         "_id" : ObjectId("6226ea64e3048a1ec408e51a"),
         "name" : "keybord",
         "price" : 250
 }
 
  > db.products.insertMany([{name: 'computer table', price: 500},{name: 'PenDrive', price: 400}]) 
-{
+
+ {
         "acknowledged" : true,
         "insertedIds" : [
                 ObjectId("6226ec40e3048a1ec408e51d"),
@@ -125,14 +141,16 @@ users
 }
 
  > db.products.find()               
-{ "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
+
+ { "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
 { "_id" : ObjectId("6226eab3e3048a1ec408e51b"), "name" : "monitor", "price" : 2500 }
 { "_id" : ObjectId("6226eacde3048a1ec408e51c"), "name" : "mouse", "price" : 300 }
 { "_id" : ObjectId("6226ec40e3048a1ec408e51d"), "name" : "computer table", "price" : 500 }
 { "_id" : ObjectId("6226ec40e3048a1ec408e51e"), "name" : "PenDrive", "price" : 400 }
 
  > db.products.find().pretty()
-{
+
+ {
         "_id" : ObjectId("6226ea64e3048a1ec408e51a"),
         "name" : "keybord",
         "price" : 250
@@ -159,43 +177,54 @@ users
 }
 
  > db.products.find()
-{ "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
+
+ { "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
 { "_id" : ObjectId("6226eab3e3048a1ec408e51b"), "name" : "monitor", "price" : 2500 }
 { "_id" : ObjectId("6226eacde3048a1ec408e51c"), "name" : "mouse", "price" : 300 }
 { "_id" : ObjectId("6226ec40e3048a1ec408e51d"), "name" : "computer table", "price" : 500 }
 { "_id" : ObjectId("6226ec40e3048a1ec408e51e"), "name" : "PenDrive", "price" : 400 }
 
  > db.products.update({_id:ObjectId("6226ec40e3048a1ec408e51d")}, {$set:{name: 'PC Table'}})      
-WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 
  > db.products.find()
-{ "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
+
+ { "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
 { "_id" : ObjectId("6226eab3e3048a1ec408e51b"), "name" : "monitor", "price" : 2500 }
 { "_id" : ObjectId("6226eacde3048a1ec408e51c"), "name" : "mouse", "price" : 300 }
 { "_id" : ObjectId("6226ec40e3048a1ec408e51d"), "name" : "PC Table", "price" : 500 }
 { "_id" : ObjectId("6226ec40e3048a1ec408e51e"), "name" : "PenDrive", "price" : 400 }
 
  > db.products.deleteOne({_id:ObjectId("6226ec40e3048a1ec408e51d")})
-{ "acknowledged" : true, "deletedCount" : 1 }
+
+ { "acknowledged" : true, "deletedCount" : 1 }
 
  > db.products.find()
-{ "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
+
+ { "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
 { "_id" : ObjectId("6226eab3e3048a1ec408e51b"), "name" : "monitor", "price" : 2500 }
 { "_id" : ObjectId("6226eacde3048a1ec408e51c"), "name" : "mouse", "price" : 300 }
 { "_id" : ObjectId("6226ec40e3048a1ec408e51e"), "name" : "PenDrive", "price" : 400 }
 
  > db.products.deleteMany({_id: {$in: [ObjectId("6226eacde3048a1ec408e51c"),ObjectId("6226ec40e3048a1ec408e51e")]}})
-{ "acknowledged" : true, "deletedCount" : 2 }
+
+ { "acknowledged" : true, "deletedCount" : 2 }
 
  > db.products.find()
-{ "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
+
+ { "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
 { "_id" : ObjectId("6226eab3e3048a1ec408e51b"), "name" : "monitor", "price" : 2500 }
-> db.createCollection('Reviews')
-{ "ok" : 1 }
+
+ > db.createCollection('Reviews')
+
+ { "ok" : 1 }
  
 > show collections
-db.Reviews.insertMany([{text:'This is good product', starts: 4, productId: ObjectId("6226ea64e3048a1ec408e51a") }, {text: 'This is very good product', starts: 4, productId: ObjectId("6226ea64e3048a1ec408e51a")}])
-db.Rev"acknowledged" : true,:'This is good product', starts: 4, productId: ObjectId("6226ea64e3048a1ec408e51a") }, {text: 'This is very good product', starts: 5,}])        "insertedIds" : [
+
+ db.Reviews.insertMany([{text:'This is good product', starts: 4, productId: ObjectId("6226ea64e3048a1ec408e51a") }, {text: 'This is very good product', starts: 4, productId: ObjectId("6226ea64e3048a1ec408e51a")}])
+
+ db.Rev"acknowledged" : true,:'This is good product', starts: 4, productId: ObjectId("6226ea64e3048a1ec408e51a") }, {text: 'This is very good product', starts: 5,}])        "insertedIds" : [
                 ObjectId("6226f2d3e3048a1ec408e51f"),
                 ObjectId("6226f2d3e3048a1ec408e520")
         ]
@@ -203,10 +232,13 @@ db.Rev"acknowledged" : true,:'This is good product', starts: 4, productId: Objec
  
  
 > db.Reviews.find()
-{ "_id" : ObjectId("6226f2d3e3048a1ec408e51f"), "text" : "This is good product", "starts" : 4, "productId" : ObjectId("6226ea64e3048a1ec408e51a") }
+
+ { "_id" : ObjectId("6226f2d3e3048a1ec408e51f"), "text" : "This is good product", "starts" : 4, "productId" : ObjectId("6226ea64e3048a1ec408e51a") }
 { "_id" : ObjectId("6226f2d3e3048a1ec408e520"), "text" : "This is very good product", "starts" : 4, "productId" : ObjectId("6226ea64e3048a1ec408e51a") }
-> db.Reviews.find().pretty()
-{
+
+ > db.Reviews.find().pretty()
+
+ {
         "_id" : ObjectId("6226f2d3e3048a1ec408e51f"),
         "text" : "This is good product",
         "starts" : 4,
@@ -220,15 +252,18 @@ db.Rev"acknowledged" : true,:'This is good product', starts: 4, productId: Objec
 }
  
 > db.Reviews.find()
-{ "_id" : ObjectId("6226f2d3e3048a1ec408e51f"), "text" : "This is good product", "starts" : 4, "productId" : ObjectId("6226ea64e3048a1ec408e51a") }
+
+ { "_id" : ObjectId("6226f2d3e3048a1ec408e51f"), "text" : "This is good product", "starts" : 4, "productId" : ObjectId("6226ea64e3048a1ec408e51a") }
 { "_id" : ObjectId("6226f2d3e3048a1ec408e520"), "text" : "This is very good product", "starts" : 4, "productId" : ObjectId("6226ea64e3048a1ec408e51a") }
  
 > db.products.find()
-{ "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
+
+ { "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
 { "_id" : ObjectId("6226eab3e3048a1ec408e51b"), "name" : "monitor", "price" : 2500 }
  
 > db.products.find().pretty()
-{
+
+ {
         "_id" : ObjectId("6226ea64e3048a1ec408e51a"),
         "name" : "keybord",
         "price" : 250
@@ -240,26 +275,34 @@ db.Rev"acknowledged" : true,:'This is good product', starts: 4, productId: Objec
 }
  
 > db.products.find()
-{ "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
+
+ { "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
 { "_id" : ObjectId("6226eab3e3048a1ec408e51b"), "name" : "monitor", "price" : 2500 }
  
 > db.products.find()
-{ "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
+
+ { "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
 { "_id" : ObjectId("6226eab3e3048a1ec408e51b"), "name" : "monitor", "price" : 2500 }
-> db.products.deleteOne({_id: ObjectId("6226eab3e3048a1ec408e51b")})
-{ "acknowledged" : true, "deletedCount" : 1 }
+
+ > db.products.deleteOne({_id: ObjectId("6226eab3e3048a1ec408e51b")})
+
+ { "acknowledged" : true, "deletedCount" : 1 }
  
 > db.products.find()
-{ "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
+
+ { "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250 }
  
 > db.products.update({_id: ObjectId("6226ea64e3048a1ec408e51a")}, {$set: {Reviews:[{text:'This is good product',starts:5}, {text:'This is bad product', start:1}]}})
-WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
  
 > db.products.find() 
-{ "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250, "Reviews" : [ { "text" : "This is good product", "starts" : 5 }, { "text" : "This is bad product", "start" : 1 } ] }
+
+ { "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250, "Reviews" : [ { "text" : "This is good product", "starts" : 5 }, { "text" : "This is bad product", "start" : 1 } ] }
  
 > db.products.find().pretty()
-{
+
+ {
         "_id" : ObjectId("6226ea64e3048a1ec408e51a"),
         "name" : "keybord",
         "price" : 250,
@@ -274,4 +317,5 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
                 }
         ]
 }
->
+
+ >
