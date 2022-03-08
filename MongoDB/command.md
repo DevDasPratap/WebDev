@@ -318,4 +318,733 @@ users
         ]
 }
 
- >
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Microsoft Windows [Version 10.0.19044.1526]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\MeDev\OneDrive\Desktop\DevDas\MERN\mongoDB>"C:\Program Files\MongoDB\Server\5.0\bin\mongo.exe"
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("b07d5b63-8e30-4646-adbd-41e57ac8355b") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-02-27T01:50:54.157+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display     
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()   
+---
+> show dbs                             
+
+ admin   0.000GB
+config  0.000GB
+ecom    0.000GB
+local   0.000GB
+shop    0.000GB
+
+ > use shop
+
+ switched to db shop
+
+ > show collections
+
+ Reviews
+products
+users
+
+ > db.products.find()
+
+ { "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250, "Reviews" : [ { "text" : "This is good product", "starts" : 5 }, { "text" : "This is bad product", "start" : 1 } ] }
+
+ > db.products.inserOne({name: 'mouse', category: 'computers'})  
+
+ uncaught exception: TypeError: db.products.inserOne is not a function :
+@(shell):1:1
+> db.products.insertOne({name: 'mouse', category: 'computers'})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("62271d39094117ccaa05aab4")
+}
+ 
+> db.products.find().pretty()                                  
+
+ {
+        "_id" : ObjectId("6226ea64e3048a1ec408e51a"),
+        "name" : "keybord",
+        "price" : 250,
+        "Reviews" : [
+                {
+                        "text" : "This is good product",
+                        "starts" : 5
+                },
+                {
+                        "text" : "This is bad product",
+                        "start" : 1
+                }
+        ]
+}
+{
+        "_id" : ObjectId("62271d39094117ccaa05aab4"),
+        "name" : "mouse",
+        "category" : "computers"
+}
+ 
+> db.products.find()                                           
+
+ { "_id" : ObjectId("6226ea64e3048a1ec408e51a"), "name" : "keybord", "price" : 250, "Reviews" : [ { "text" : "This is good product", "starts" : 5 }, { "text" : "This is bad product", "start" : 1 } ] }
+{ "_id" : ObjectId("62271d39094117ccaa05aab4"), "name" : "mouse", "category" : "computers" }
+
+ > db.products.deleteOne({_id: ObjectId("6226ea64e3048a1ec408e51a")})
+
+ { "acknowledged" : true, "deletedCount" : 1 }
+
+ > db.products.find()
+
+ { "_id" : ObjectId("62271d39094117ccaa05aab4"), "name" : "mouse", "category" : "computers" }
+
+ > db.products.insertOne({name: 'keybord'})
+
+ {
+        "acknowledged" : true,
+        "insertedId" : ObjectId("62271fde094117ccaa05aab5")
+}
+ 
+> db.products.find()
+
+ { "_id" : ObjectId("62271d39094117ccaa05aab4"), "name" : "mouse", "category" : "computers" }
+{ "_id" : ObjectId("62271fde094117ccaa05aab5"), "name" : "keybord" }
+
+ > db.products.find().pretty()
+
+ {
+        "_id" : ObjectId("62271d39094117ccaa05aab4"),
+        "name" : "mouse",
+        "category" : "computers"
+}
+{ "_id" : ObjectId("62271fde094117ccaa05aab5"), "name" : "keybord" }
+
+ > db.products.find({name: {$eq: 'keybord'}})
+
+ { "_id" : ObjectId("62271fde094117ccaa05aab5"), "name" : "keybord" }
+
+ > db.products.insertOne({name: 'mouse'})  
+
+ {
+        "acknowledged" : true,
+        "insertedId" : ObjectId("622720e3094117ccaa05aab6")
+}
+ 
+> db.products.insertOne({name: 'pendrive'})
+
+ {
+        "acknowledged" : true,
+        "insertedId" : ObjectId("622720f5094117ccaa05aab7")
+}
+ 
+> db.products.find().pretty()
+
+ {
+        "_id" : ObjectId("62271d39094117ccaa05aab4"),
+        "name" : "mouse",
+        "category" : "computers"
+}
+{ "_id" : ObjectId("62271fde094117ccaa05aab5"), "name" : "keybord" }
+{ "_id" : ObjectId("622720e3094117ccaa05aab6"), "name" : "mouse" }
+{ "_id" : ObjectId("622720f5094117ccaa05aab7"), "name" : "pendrive" }
+
+ > db.products.find({name: {$eq: 'keybord'}})
+
+ { "_id" : ObjectId("62271fde094117ccaa05aab5"), "name" : "keybord" }
+
+ > db.products.find()         
+
+ { "_id" : ObjectId("62271d39094117ccaa05aab4"), "name" : "mouse", "category" : "computers" }
+{ "_id" : ObjectId("62271fde094117ccaa05aab5"), "name" : "keybord" }
+{ "_id" : ObjectId("622720e3094117ccaa05aab6"), "name" : "mouse" }
+{ "_id" : ObjectId("622720f5094117ccaa05aab7"), "name" : "pendrive" }
+
+ > db.products.find({name: {$eq: 'mouse'}})  
+
+ { "_id" : ObjectId("62271d39094117ccaa05aab4"), "name" : "mouse", "category" : "computers" }
+{ "_id" : ObjectId("622720e3094117ccaa05aab6"), "name" : "mouse" }
+
+ > db.products.insertOne({name: 'usb', price: 22})
+
+ {
+        "acknowledged" : true,
+        "insertedId" : ObjectId("62272177094117ccaa05aab8")
+}
+
+ > db.products.find()                             
+
+ { "_id" : ObjectId("62271d39094117ccaa05aab4"), "name" : "mouse", "category" : "computers" }
+{ "_id" : ObjectId("62271fde094117ccaa05aab5"), "name" : "keybord" }
+{ "_id" : ObjectId("622720e3094117ccaa05aab6"), "name" : "mouse" }
+{ "_id" : ObjectId("622720f5094117ccaa05aab7"), "name" : "pendrive" }
+{ "_id" : ObjectId("62272177094117ccaa05aab8"), "name" : "usb", "price" : 22 }
+
+ > db.products.insertOne({name: 'pen', price: 52})  
+
+ {
+        "acknowledged" : true,
+        "insertedId" : ObjectId("622721ab094117ccaa05aab9")
+}
+ 
+> db.products.find()
+
+ { "_id" : ObjectId("62271d39094117ccaa05aab4"), "name" : "mouse", "category" : "computers" }
+{ "_id" : ObjectId("62271fde094117ccaa05aab5"), "name" : "keybord" }
+{ "_id" : ObjectId("622720e3094117ccaa05aab6"), "name" : "mouse" }
+{ "_id" : ObjectId("622720f5094117ccaa05aab7"), "name" : "pendrive" }
+{ "_id" : ObjectId("62272177094117ccaa05aab8"), "name" : "usb", "price" : 22 }
+{ "_id" : ObjectId("622721ab094117ccaa05aab9"), "name" : "pen", "price" : 52 }
+> db.products.find({price: {$gt: 23}})
+{ "_id" : ObjectId("622721ab094117ccaa05aab9"), "name" : "pen", "price" : 52 }
+
+ > db.products.find({price: {$gt: 53}})
+
+ > db.products.find({price: {$gte: 53}})
+
+ > db.products.find({price: {$lt: 221}}) 
+
+ { "_id" : ObjectId("62272177094117ccaa05aab8"), "name" : "usb", "price" : 22 }
+{ "_id" : ObjectId("622721ab094117ccaa05aab9"), "name" : "pen", "price" : 52 }
+
+ > db.products.find({price: {$lt: 25}}) 
+
+ { "_id" : ObjectId("62272177094117ccaa05aab8"), "name" : "usb", "price" : 22 }
+
+ > db.products.find({price: {$lte: 22}})
+
+ { "_id" : ObjectId("62272177094117ccaa05aab8"), "name" : "usb", "price" : 22 }
+
+ > db.products.find({price: {$lte: 52}})
+
+ { "_id" : ObjectId("62272177094117ccaa05aab8"), "name" : "usb", "price" : 22 }
+{ "_id" : ObjectId("622721ab094117ccaa05aab9"), "name" : "pen", "price" : 52 }
+> db.products.find({$and: [{price: {$eq: 22}}, {name: {$eq: 'usb'}}]})
+{ "_id" : ObjectId("62272177094117ccaa05aab8"), "name" : "usb", "price" : 22 }
+> db.products.find({$or: [{price: {$eq: 22}}, {name: {$eq: 'usb'}}]}) 
+{ "_id" : ObjectId("62272177094117ccaa05aab8"), "name" : "usb", "price" : 22 }
+> db.products.find({$or: [{price: {$eq: 22}}, {name: {$eq: 'pen'}}]})
+{ "_id" : ObjectId("62272177094117ccaa05aab8"), "name" : "usb", "price" : 22 }
+{ "_id" : ObjectId("622721ab094117ccaa05aab9"), "name" : "pen", "price" : 52 }
+
+ > show dbs
+
+ admin   0.000GB
+config  0.000GB
+ecom    0.000GB
+local   0.000GB
+shop    0.000GB
+
+ > use shop
+switched to db shop
+
+ > show collections
+
+ Reviews
+products
+users
+
+ > for(let i=1; i<5000; i++){
+... db.products.insert({name:'product' + i, price: i})
+... }
+WriteResult({ "nInserted" : 1 })
+>
+
+ > db.products.find()
+
+ { "_id" : ObjectId("62271d39094117ccaa05aab4"), "name" : "mouse", "category" : "computers" }
+{ "_id" : ObjectId("62271fde094117ccaa05aab5"), "name" : "keybord" }
+{ "_id" : ObjectId("622720e3094117ccaa05aab6"), "name" : "mouse" }
+{ "_id" : ObjectId("622720f5094117ccaa05aab7"), "name" : "pendrive" }
+{ "_id" : ObjectId("62272177094117ccaa05aab8"), "name" : "usb", "price" : 22 }
+{ "_id" : ObjectId("622721ab094117ccaa05aab9"), "name" : "pen", "price" : 52 }
+{ "_id" : ObjectId("62272b16094117ccaa05aaba"), "name" : "product1", "price" : 1 }
+{ "_id" : ObjectId("62272b16094117ccaa05aabb"), "name" : "product2", "price" : 2 }
+{ "_id" : ObjectId("62272b16094117ccaa05aabc"), "name" : "product3", "price" : 3 }
+{ "_id" : ObjectId("62272b16094117ccaa05aabd"), "name" : "product4", "price" : 4 }
+{ "_id" : ObjectId("62272b16094117ccaa05aabe"), "name" : "product5", "price" : 5 }
+{ "_id" : ObjectId("62272b16094117ccaa05aabf"), "name" : "product6", "price" : 6 }
+{ "_id" : ObjectId("62272b16094117ccaa05aac0"), "name" : "product7", "price" : 7 }
+{ "_id" : ObjectId("62272b16094117ccaa05aac1"), "name" : "product8", "price" : 8 }
+{ "_id" : ObjectId("62272b16094117ccaa05aac2"), "name" : "product9", "price" : 9 }
+{ "_id" : ObjectId("62272b16094117ccaa05aac3"), "name" : "product10", "price" : 10 }
+{ "_id" : ObjectId("62272b16094117ccaa05aac4"), "name" : "product11", "price" : 11 }
+{ "_id" : ObjectId("62272b16094117ccaa05aac5"), "name" : "product12", "price" : 12 }
+{ "_id" : ObjectId("62272b16094117ccaa05aac6"), "name" : "product13", "price" : 13 }
+{ "_id" : ObjectId("62272b16094117ccaa05aac7"), "name" : "product14", "price" : 14 }
+Type "it" for more
+
+ > it
+
+ { "_id" : ObjectId("62272b16094117ccaa05aac8"), "name" : "product15", "price" : 15 }
+{ "_id" : ObjectId("62272b16094117ccaa05aac9"), "name" : "product16", "price" : 16 }
+{ "_id" : ObjectId("62272b16094117ccaa05aaca"), "name" : "product17", "price" : 17 }
+{ "_id" : ObjectId("62272b16094117ccaa05aacb"), "name" : "product18", "price" : 18 }
+{ "_id" : ObjectId("62272b16094117ccaa05aacc"), "name" : "product19", "price" : 19 }
+{ "_id" : ObjectId("62272b16094117ccaa05aacd"), "name" : "product20", "price" : 20 }
+{ "_id" : ObjectId("62272b16094117ccaa05aace"), "name" : "product21", "price" : 21 }
+{ "_id" : ObjectId("62272b16094117ccaa05aacf"), "name" : "product22", "price" : 22 }
+{ "_id" : ObjectId("62272b16094117ccaa05aad0"), "name" : "product23", "price" : 23 }
+{ "_id" : ObjectId("62272b16094117ccaa05aad1"), "name" : "product24", "price" : 24 }
+{ "_id" : ObjectId("62272b16094117ccaa05aad2"), "name" : "product25", "price" : 25 }
+{ "_id" : ObjectId("62272b16094117ccaa05aad3"), "name" : "product26", "price" : 26 }
+{ "_id" : ObjectId("62272b16094117ccaa05aad4"), "name" : "product27", "price" : 27 }
+{ "_id" : ObjectId("62272b16094117ccaa05aad5"), "name" : "product28", "price" : 28 }
+{ "_id" : ObjectId("62272b16094117ccaa05aad6"), "name" : "product29", "price" : 29 }
+{ "_id" : ObjectId("62272b16094117ccaa05aad7"), "name" : "product30", "price" : 30 }
+{ "_id" : ObjectId("62272b16094117ccaa05aad8"), "name" : "product31", "price" : 31 }
+{ "_id" : ObjectId("62272b16094117ccaa05aad9"), "name" : "product32", "price" : 32 }
+{ "_id" : ObjectId("62272b16094117ccaa05aada"), "name" : "product33", "price" : 33 }
+{ "_id" : ObjectId("62272b16094117ccaa05aadb"), "name" : "product34", "price" : 34 }
+Type "it" for more
+
+ > db.products.find({name: 'product100'})
+
+ { "_id" : ObjectId("62272b16094117ccaa05ab1d"), "name" : "product100", "price" : 100 }
+
+ > db.products.find({name: 'product100'}).explain('executionStats')
+
+ {
+        "explainVersion" : "1",
+        "queryPlanner" : {
+                "namespace" : "shop.products",
+                "indexFilterSet" : false,
+                "parsedQuery" : {
+                        "name" : {
+                                "$eq" : "product100"
+                        }
+                },
+                "maxIndexedOrSolutionsReached" : false,
+                "maxIndexedAndSolutionsReached" : false,
+                "maxScansToExplodeReached" : false,
+                "winningPlan" : {
+                        "stage" : "COLLSCAN",
+                        "filter" : {
+                                "name" : {
+                                        "$eq" : "product100"
+                                }
+                        },
+                        "direction" : "forward"
+                },
+                "rejectedPlans" : [ ]
+        },
+        "executionStats" : {
+                "executionSuccess" : true,
+                "nReturned" : 1,
+                "executionTimeMillis" : 17,
+                "totalKeysExamined" : 0,
+                "totalDocsExamined" : 5005,
+                "executionStages" : {
+                        "stage" : "COLLSCAN",
+                        "filter" : {
+                                "name" : {
+                                        "$eq" : "product100"
+                                }
+                        },
+                        "nReturned" : 1,
+                        "executionTimeMillisEstimate" : 0,
+                        "works" : 5007,
+                        "advanced" : 1,
+                        "needTime" : 5005,
+                        "needYield" : 0,
+                        "saveState" : 5,
+                        "restoreState" : 5,
+                        "isEOF" : 1,
+                        "direction" : "forward",
+                        "docsExamined" : 5005
+                }
+        },
+        "command" : {
+                "find" : "products",
+                "filter" : {
+                        "name" : "product100"
+                },
+                "$db" : "shop"
+        },
+        "serverInfo" : {
+                "host" : "LAPTOP-HEKJMGL9",
+                "port" : 27017,
+                "version" : "5.0.6",
+                "gitVersion" : "212a8dbb47f07427dae194a9c75baec1d81d9259"
+        },
+        "serverParameters" : {
+                "internalQueryFacetBufferSizeBytes" : 104857600,
+                "internalQueryFacetMaxOutputDocSizeBytes" : 104857600,
+                "internalLookupStageIntermediateDocumentMaxSizeBytes" : 104857600,
+                "internalDocumentSourceGroupMaxMemoryBytes" : 104857600,
+                "internalQueryMaxBlockingSortMemoryUsageBytes" : 104857600,
+                "internalQueryProhibitBlockingMergeOnMongoS" : 0,
+                "internalQueryMaxAddToSetBytes" : 104857600,
+                "internalDocumentSourceSetWindowFieldsMaxMemoryBytes" : 104857600
+        },
+        "ok" : 1
+}
+ 
+> db.products.createIndex({name: 1})
+
+ {
+        "numIndexesBefore" : 1,
+        "numIndexesAfter" : 2,
+        "createdCollectionAutomatically" : false,
+        "ok" : 1
+}
+ 
+> db.products.find({name: 'product100'}).explain('executionStats')
+
+ {
+        "explainVersion" : "1",
+        "queryPlanner" : {
+                "namespace" : "shop.products",
+                "indexFilterSet" : false,
+                "parsedQuery" : {
+                        "name" : {
+                                "$eq" : "product100"
+                        }
+                },
+                "maxIndexedOrSolutionsReached" : false,
+                "maxIndexedAndSolutionsReached" : false,
+                "maxScansToExplodeReached" : false,
+                "winningPlan" : {
+                        "stage" : "FETCH",
+                        "inputStage" : {
+                                "stage" : "IXSCAN",
+                                "keyPattern" : {
+                                        "name" : 1
+                                },
+                                "indexName" : "name_1",
+                                "isMultiKey" : false,
+                                "multiKeyPaths" : {
+                                        "name" : [ ]
+                                },
+                                "isUnique" : false,
+                                "isSparse" : false,
+                                "isPartial" : false,
+                                "indexVersion" : 2,
+                                "direction" : "forward",
+                                "indexBounds" : {
+                                        "name" : [
+                                                "[\"product100\", \"product100\"]"
+                                        ]
+                                }
+                        }
+                },
+                "rejectedPlans" : [ ]
+        },
+        "executionStats" : {
+                "executionSuccess" : true,
+                "nReturned" : 1,
+                "executionTimeMillis" : 42,
+                "totalKeysExamined" : 1,
+                "totalDocsExamined" : 1,
+                "executionStages" : {
+                        "stage" : "FETCH",
+                        "nReturned" : 1,
+                        "executionTimeMillisEstimate" : 0,
+                        "works" : 2,
+                        "advanced" : 1,
+                        "needTime" : 0,
+                        "needYield" : 0,
+                        "saveState" : 0,
+                        "restoreState" : 0,
+                        "isEOF" : 1,
+                        "docsExamined" : 1,
+                        "alreadyHasObj" : 0,
+                        "inputStage" : {
+                                "stage" : "IXSCAN",
+                                "nReturned" : 1,
+                                "executionTimeMillisEstimate" : 0,
+                                "works" : 2,
+                                "advanced" : 1,
+                                "needTime" : 0,
+                                "needYield" : 0,
+                                "saveState" : 0,
+                                "restoreState" : 0,
+                                "isEOF" : 1,
+                                "keyPattern" : {
+                                        "name" : 1
+                                },
+                                "indexName" : "name_1",
+                                "isMultiKey" : false,
+                                "multiKeyPaths" : {
+                                        "name" : [ ]
+                                },
+                                "isUnique" : false,
+                                "isSparse" : false,
+                                "isPartial" : false,
+                                "indexVersion" : 2,
+                                "direction" : "forward",
+                                "indexBounds" : {
+                                        "name" : [
+                                                "[\"product100\", \"product100\"]"
+                                        ]
+                                },
+                                "keysExamined" : 1,
+                                "seeks" : 1,
+                                "dupsTested" : 0,
+                                "dupsDropped" : 0
+                        }
+                }
+        },
+        "command" : {
+                "find" : "products",
+                "filter" : {
+                        "name" : "product100"
+                },
+                "$db" : "shop"
+        },
+        "serverInfo" : {
+                "host" : "LAPTOP-HEKJMGL9",
+                "port" : 27017,
+                "version" : "5.0.6",
+                "gitVersion" : "212a8dbb47f07427dae194a9c75baec1d81d9259"
+        },
+        "serverParameters" : {
+                "internalQueryFacetBufferSizeBytes" : 104857600,
+                "internalQueryFacetMaxOutputDocSizeBytes" : 104857600,
+                "internalLookupStageIntermediateDocumentMaxSizeBytes" : 104857600,
+                "internalDocumentSourceGroupMaxMemoryBytes" : 104857600,
+                "internalQueryMaxBlockingSortMemoryUsageBytes" : 104857600,
+                "internalQueryProhibitBlockingMergeOnMongoS" : 0,
+                "internalQueryMaxAddToSetBytes" : 104857600,
+                "internalDocumentSourceSetWindowFieldsMaxMemoryBytes" : 104857600
+        },
+        "ok" : 1
+}
+
+ > db.products.getIndexes()
+
+ [
+        {
+                "v" : 2,
+                "key" : {
+                        "_id" : 1
+                },
+                "name" : "_id_"
+        },
+        {
+                "v" : 2,
+                "key" : {
+                        "name" : 1
+                },
+                "name" : "name_1"
+        }
+]
+
+ > db.products.dropIndexes('name_1')
+
+ { "nIndexesWas" : 2, "ok" : 1 }
+
+ > db.products.getIndexes()
+
+ [ { "v" : 2, "key" : { "_id" : 1 }, "name" : "_id_" } ]
+
+ > db.products.find({name: 'product5000'}).explain('executionStats')
+
+ {
+        "explainVersion" : "1",
+        "queryPlanner" : {
+                "namespace" : "shop.products",
+                "indexFilterSet" : false,
+                "parsedQuery" : {
+                        "name" : {
+                                "$eq" : "product5000"
+                        }
+                },
+                "maxIndexedOrSolutionsReached" : false,
+                "maxIndexedAndSolutionsReached" : false,
+                "maxScansToExplodeReached" : false,
+                "winningPlan" : {
+                        "stage" : "COLLSCAN",
+                        "filter" : {
+                                "name" : {
+                                        "$eq" : "product5000"
+                                }
+                        },
+                        "direction" : "forward"
+                },
+                "rejectedPlans" : [ ]
+        },
+        "executionStats" : {
+                "executionSuccess" : true,
+                "nReturned" : 0,
+                "executionTimeMillis" : 14,
+                "totalKeysExamined" : 0,
+                "totalDocsExamined" : 5005,
+                "executionStages" : {
+                        "stage" : "COLLSCAN",
+                        "filter" : {
+                                "name" : {
+                                        "$eq" : "product5000"
+                                }
+                        },
+                        "nReturned" : 0,
+                        "executionTimeMillisEstimate" : 1,
+                        "works" : 5007,
+                        "advanced" : 0,
+                        "needTime" : 5006,
+                        "needYield" : 0,
+                        "saveState" : 5,
+                        "restoreState" : 5,
+                        "isEOF" : 1,
+                        "direction" : "forward",
+                        "docsExamined" : 5005
+                }
+        },
+        "command" : {
+                "find" : "products",
+                "filter" : {
+                        "name" : "product5000"
+                },
+                "$db" : "shop"
+        },
+        "serverInfo" : {
+                "host" : "LAPTOP-HEKJMGL9",
+                "port" : 27017,
+                "version" : "5.0.6",
+                "gitVersion" : "212a8dbb47f07427dae194a9c75baec1d81d9259"
+        },
+        "serverParameters" : {
+                "internalQueryFacetBufferSizeBytes" : 104857600,
+                "internalQueryFacetMaxOutputDocSizeBytes" : 104857600,
+                "internalLookupStageIntermediateDocumentMaxSizeBytes" : 104857600,
+                "internalDocumentSourceGroupMaxMemoryBytes" : 104857600,
+                "internalQueryMaxBlockingSortMemoryUsageBytes" : 104857600,
+                "internalQueryProhibitBlockingMergeOnMongoS" : 0,
+                "internalQueryMaxAddToSetBytes" : 104857600,
+                "internalDocumentSourceSetWindowFieldsMaxMemoryBytes" : 104857600
+        },
+        "ok" : 1
+}
+ 
+> db.products.find({name: 'product100'})                           
+
+ { "_id" : ObjectId("62272b16094117ccaa05ab1d"), "name" : "product100", "price" : 100 }
+
+ > db.products.find({_id: ObjectId("62272b16094117ccaa05ab1d")}).explain('executionStats')
+{
+        "explainVersion" : "1",
+        "queryPlanner" : {
+                "namespace" : "shop.products",
+                "indexFilterSet" : false,
+                "parsedQuery" : {
+                        "_id" : {
+                                "$eq" : ObjectId("62272b16094117ccaa05ab1d")
+                        }
+                },
+                "maxIndexedOrSolutionsReached" : false,
+                "maxIndexedAndSolutionsReached" : false,
+                "maxScansToExplodeReached" : false,
+                "winningPlan" : {
+                        "stage" : "IDHACK"
+                },
+                "rejectedPlans" : [ ]
+        },
+        "executionStats" : {
+                "executionSuccess" : true,
+                "nReturned" : 1,
+                "executionTimeMillis" : 0,
+                "totalKeysExamined" : 1,
+                "totalDocsExamined" : 1,
+                "executionStages" : {
+                        "stage" : "IDHACK",
+                        "nReturned" : 1,
+                        "executionTimeMillisEstimate" : 0,
+                        "works" : 2,
+                        "advanced" : 1,
+                        "needTime" : 0,
+                        "needYield" : 0,
+                        "saveState" : 0,
+                        "restoreState" : 0,
+                        "isEOF" : 1,
+                        "keysExamined" : 1,
+                        "docsExamined" : 1
+                }
+        },
+        "command" : {
+                "find" : "products",
+                "filter" : {
+                        "_id" : ObjectId("62272b16094117ccaa05ab1d")
+                },
+                "$db" : "shop"
+        },
+        "serverInfo" : {
+                "host" : "LAPTOP-HEKJMGL9",
+                "port" : 27017,
+                "version" : "5.0.6",
+                "gitVersion" : "212a8dbb47f07427dae194a9c75baec1d81d9259"
+        },
+        "serverParameters" : {
+                "internalQueryFacetBufferSizeBytes" : 104857600,
+                "internalQueryFacetMaxOutputDocSizeBytes" : 104857600,
+                "internalLookupStageIntermediateDocumentMaxSizeBytes" : 104857600,
+                "internalDocumentSourceGroupMaxMemoryBytes" : 104857600,
+                "internalQueryMaxBlockingSortMemoryUsageBytes" : 104857600,
+                "internalQueryProhibitBlockingMergeOnMongoS" : 0,
+                "internalQueryMaxAddToSetBytes" : 104857600,
+                "internalDocumentSourceSetWindowFieldsMaxMemoryBytes" : 104857600
+        },
+        "ok" : 1
+}
+
+ > show dbs
+
+ admin   0.000GB
+config  0.000GB
+ecom    0.000GB
+local   0.000GB
+shop    0.000GB
+
+ > use admin
+
+ switched to db admin
+
+ > db.createUser(
+... {
+... user: 'superAdmin',
+... pwd: passwordPrompt(),
+... roles: [
+... {
+... role: "userAdminAnyDatabase", 
+... db: "admin"}, "readWriteAnyDatabase"
+... ]
+... }
+... )
+Enter password: pass123
+Successfully added user: {
+        "user" : "superAdmin",
+        "roles" : [
+                {
+                        "role" : "userAdminAnyDatabase",
+                        "db" : "admin"
+                },
+                "readWriteAnyDatabase"
+        ]
+}
+> 
