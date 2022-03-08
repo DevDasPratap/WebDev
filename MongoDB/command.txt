@@ -883,3 +883,251 @@ Successfully added user: {
         ]
 }
 > 
+
+
+
+
+Microsoft Windows [Version 10.0.19044.1526]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Program Files\MongoDB\Server\5.0\bin>mongo --port 27017 -u "superAdmin" --authenticationDatabase "admin" -p  
+
+MongoDB shell version v5.0.6
+Enter password: 
+
+connecting to: mongodb://127.0.0.1:27017/?authSource=admin&compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("4ecce977-c420-4dc7-bde5-bd3f64ea07e0") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-03-08T18:40:29.364+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin   0.000GB
+config  0.000GB
+ecom    0.000GB
+local   0.000GB
+shop    0.000GB
+> ^C
+bye
+
+C:\Program Files\MongoDB\Server\5.0\bin>mongo --port 27017 -u "ecom" --authenticationDatabase "eShop" -p        
+MongoDB shell version v5.0.6
+Enter password:
+connecting to: mongodb://127.0.0.1:27017/?authSource=eShop&compressors=disabled&gssapiServiceName=mongodb
+Error: Authentication failed. :
+connect@src/mongo/shell/mongo.js:372:17
+@(connect):2:6
+exception: connect failed
+exiting with code 1
+
+C:\Program Files\MongoDB\Server\5.0\bin>mongo --port 27017 -u "eshop" --authenticationDatabase "eShop" -p      
+MongoDB shell version v5.0.6
+Enter password:
+connecting to: mongodb://127.0.0.1:27017/?authSource=eShop&compressors=disabled&gssapiServiceName=mongodb
+Error: Authentication failed. :
+connect@src/mongo/shell/mongo.js:372:17
+@(connect):2:6
+exception: connect failed
+exiting with code 1
+
+C:\Program Files\MongoDB\Server\5.0\bin>mongo --port 27017 -u "ecom" --authenticationDatabase "eShop" -p  
+MongoDB shell version v5.0.6
+Enter password:
+connecting to: mongodb://127.0.0.1:27017/?authSource=eShop&compressors=disabled&gssapiServiceName=mongodb
+Error: Authentication failed. :
+connect@src/mongo/shell/mongo.js:372:17
+@(connect):2:6
+exception: connect failed
+exiting with code 1
+
+C:\Program Files\MongoDB\Server\5.0\bin>show dbs                                                               
+'show' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Program Files\MongoDB\Server\5.0\bin>mongo --port 27017 -u "superAdmin" --authenticationDatabase "admin" -p
+MongoDB shell version v5.0.6
+Enter password:
+connecting to: mongodb://127.0.0.1:27017/?authSource=admin&compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("d67b5d50-1bb1-4fdd-9d96-75e9a2b32e11") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-03-08T18:40:29.364+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin   0.000GB
+config  0.000GB
+ecom    0.000GB
+local   0.000GB
+shop    0.000GB
+> use shop
+switched to db shop
+> db.createUser(
+... {
+... user: 'ecomUser',
+... pwd: passwordPrompt(),
+... roles:[
+... {
+... role: 'readWrite', db: 'ecom'
+... },
+... {
+... role: 'read', db: 'pizza'
+... }
+... ]
+... }
+... )
+Enter password: 
+Successfully added user: {
+        "user" : "ecomUser",
+        "roles" : [
+                {
+                        "role" : "readWrite",
+                        "db" : "ecom"
+                },
+                {
+                        "role" : "read",
+                        "db" : "pizza"
+                }
+        ]
+}
+> ^C
+bye
+
+C:\Program Files\MongoDB\Server\5.0\bin>mongo --port 27017 -u "ecom" --authenticationDatabase "ecomUser" -p     
+MongoDB shell version v5.0.6
+Enter password:
+connecting to: mongodb://127.0.0.1:27017/?authSource=ecomUser&compressors=disabled&gssapiServiceName=mongodb
+Error: Authentication failed. :
+connect@src/mongo/shell/mongo.js:372:17
+@(connect):2:6
+exception: connect failed
+exiting with code 1
+
+C:\Program Files\MongoDB\Server\5.0\bin>mongo --port 27017 -u "ecomUser" --authenticationDatabase "ecom" -p 
+MongoDB shell version v5.0.6
+Enter password:
+connecting to: mongodb://127.0.0.1:27017/?authSource=ecom&compressors=disabled&gssapiServiceName=mongodb
+Error: Authentication failed. :
+connect@src/mongo/shell/mongo.js:372:17
+@(connect):2:6
+exception: connect failed
+exiting with code 1
+
+C:\Program Files\MongoDB\Server\5.0\bin>mongo --port 27017 -u "superAdmin" --authenticationDatabase "admin" -p
+MongoDB shell version v5.0.6
+Enter password:pass123
+connecting to: mongodb://127.0.0.1:27017/?authSource=admin&compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("b334f9c6-8975-45c3-a114-efbf5c8dbc14") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-03-08T18:40:29.364+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin   0.000GB
+config  0.000GB
+ecom    0.000GB
+local   0.000GB
+shop    0.000GB
+> use shop
+switched to db shop
+> db.createUser(
+... {
+... user:'eDev',
+... pwd: passwordPrompt(),
+... roles: [
+... {
+... role: 'readWrite', db: 'devdas'
+... },
+... {
+... role: 'read', db: 'pizza'
+... }
+... ]
+... })
+Enter password:pass123
+Successfully added user: {
+        "user" : "eDev",
+        "roles" : [
+                {
+                        "role" : "readWrite",
+                        "db" : "devdas"
+                },
+                {
+                        "role" : "read",
+                        "db" : "pizza"
+                }
+        ]
+}
+> ^C
+bye
+
+C:\Program Files\MongoDB\Server\5.0\bin>mongo --port 27017 -u "eDev" --authenticationDatabase "devdas" -p        
+MongoDB shell version v5.0.6
+Enter password:
+connecting to: mongodb://127.0.0.1:27017/?authSource=devdas&compressors=disabled&gssapiServiceName=mongodb
+Error: Authentication failed. :
+connect@src/mongo/shell/mongo.js:372:17
+@(connect):2:6
+exception: connect failed
+exiting with code 1
+
+C:\Program Files\MongoDB\Server\5.0\bin>db.adminCommand( { shutdown: 1 } )
+'db.adminCommand' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Program Files\MongoDB\Server\5.0\bin>  
