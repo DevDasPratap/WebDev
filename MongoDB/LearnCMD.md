@@ -463,4 +463,140 @@ devda
 { "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Full Stack", "LearnDay" : 300, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045d"), "name" : "MongoDB", "type" : "DataBase", "LearnDay" : 180, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045e"), "name" : "Git", "type" : "GitHub", "LearnDay" : 30, "active" : true }
->  
+
+
+
+
+
+
+
+
+
+Microsoft Windows [Version 10.0.19044.1586]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\MeDev>mongo
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("121fec12-579a-4e28-a3c7-29f0bb560b93") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-03-29T18:53:41.525+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin   0.000GB
+config  0.000GB
+devda   0.000GB
+ecom    0.000GB
+local   0.000GB
+shop    0.000GB
+> use devda
+switched to db devda
+> show collections
+devda
+> db.devda.find()
+{ "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : true }
+{ "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Full Stack", "LearnDay" : 300, "active" : true }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045d"), "name" : "MongoDB", "type" : "DataBase", "LearnDay" : 180, "active" : true }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045e"), "name" : "Git", "type" : "GitHub", "LearnDay" : 30, "active" : true }
+
+##> db.devda.updateOne({name:"Java Script"}, {$set:{type:"Full Stack JS"}})
+
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+
+##> db.devda.find()
+
+{ "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : true }
+{ "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Full Stack JS", "LearnDay" : 300, "active" : true }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045d"), "name" : "MongoDB", "type" : "DataBase", "LearnDay" : 180, "active" : true }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045e"), "name" : "Git", "type" : "GitHub", "LearnDay" : 30, "active" : true }
+
+##> db.devda.updateOne({name:"Java Script"}, {$set:{type:"Front End"}})    
+
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+
+##> db.devda.find()
+
+{ "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : true }
+{ "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Front End", "LearnDay" : 300, "active" : true }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045d"), "name" : "MongoDB", "type" : "DataBase", "LearnDay" : 180, "active" : true }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045e"), "name" : "Git", "type" : "GitHub", "LearnDay" : 30, "active" : true }
+
+##> db.devda.updateMany({type: "Front End"}, {$set:{active:false}})      
+
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+
+##> db.devda.find()
+
+{ "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : false }
+{ "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Front End", "LearnDay" : 300, "active" : false }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045d"), "name" : "MongoDB", "type" : "DataBase", "LearnDay" : 180, "active" : true }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045e"), "name" : "Git", "type" : "GitHub", "LearnDay" : 30, "active" : true }
+> db.devda.updateOne({name:"Java Script"}, {$set:{type:"Full Stack JS"}})
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+
+##> db.devda.find()
+
+{ "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : false }
+{ "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Full Stack JS", "LearnDay" : 300, "active" : false }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045d"), "name" : "MongoDB", "type" : "DataBase", "LearnDay" : 180, "active" : true }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045e"), "name" : "Git", "type" : "GitHub", "LearnDay" : 30, "active" : true }
+##> show dbs
+admin   0.000GB
+config  0.000GB
+devda   0.000GB
+ecom    0.000GB
+local   0.000GB
+shop    0.000GB
+> db
+devda
+##> show collections
+devda
+
+##> db.devda.find()
+
+{ "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : false }
+{ "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Full Stack JS", "LearnDay" : 300, "active" : false }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045d"), "name" : "MongoDB", "type" : "DataBase", "LearnDay" : 180, "active" : true }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045e"), "name" : "Git", "type" : "GitHub", "LearnDay" : 30, "active" : true }
+> db.devda.deleteMany({name:"Git"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+
+##> db.devda.find()
+
+{ "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : false }
+{ "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Full Stack JS", "LearnDay" : 300, "active" : false }
+{ "_id" : ObjectId("62431db1e1aa0f77386d045d"), "name" : "MongoDB", "type" : "DataBase", "LearnDay" : 180, "active" : true }
+
+##db.devda.deleteMany({}) //delete all collections
+
+> ^C
+bye
+
+C:\Users\MeDev>
