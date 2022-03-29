@@ -49,7 +49,9 @@ C:\Users\MeDev>mongod --version
 'mongod' is not recognized as an internal or external command,
 operable program or batch file.
 
-C:\Users\MeDev>"C:\Program Files\MongoDB\Server\5.0\bin\mongo.exe" --version
+
+##C:\Users\MeDev>"C:\Program Files\MongoDB\Server\5.0\bin\mongo.exe" --version
+
 MongoDB shell version v5.0.6
 Build Info: {
     "version": "5.0.6",
@@ -71,7 +73,8 @@ C:\Users\MeDev>mongod --version
 'mongod' is not recognized as an internal or external command,
 operable program or batch file.
 
-C:\Users\MeDev>"C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe" --version
+##C:\Users\MeDev>"C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe" --version
+
 db version v5.0.6
 Build Info: {
     "version": "5.0.6",
@@ -112,18 +115,23 @@ The server generated these startup warnings when booting:
         To enable free monitoring, run the following command: db.enableFreeMonitoring()
         To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
 ---
-> show dbs
+##> show dbs
+
 admin   0.000GB
 config  0.000GB
 ecom    0.000GB
 local   0.000GB
 shop    0.000GB
-> use devda
+##> use devda
 switched to db devda
-> db.devda.insertOne({name:"ReactJs", type:"Front End", learn day:"30", active: true})
+
+##> db.devda.insertOne({name:"ReactJs", type:"Front End", learn day:"30", active: true})
+
 uncaught exception: SyntaxError: missing : after property id :
 @(shell):1:60
-> db.devda.insertOne({name:"ReactJs", type:"Front End", learnDay:30, active: true})   
+
+##> db.devda.insertOne({name:"ReactJs", type:"Front End", learnDay:30, active: true})   
+
 {
         "acknowledged" : true,
         "insertedId" : ObjectId("62431838e1aa0f77386d045a")
@@ -133,20 +141,24 @@ uncaught exception: SyntaxError: missing : after property id :
 //Create/insert/add
 
 
-> show dbs
+##> show dbs
 admin   0.000GB
 config  0.000GB
 devda   0.000GB
 ecom    0.000GB
 local   0.000GB
 shop    0.000GB
-> db
+##> db
 devda
-> show collections
+##> show collections
 devda
-> db.devda.find()
+
+##> db.devda.find()
+
 { "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : true }
-> db.devda.find().pretty()
+
+##> db.devda.find().pretty()
+
 {
         "_id" : ObjectId("62431838e1aa0f77386d045a"),
         "name" : "ReactJs",
@@ -154,12 +166,16 @@ devda
         "learnDay" : 30,
         "active" : true
 }
-> db.devda.insertOne({name:"NodeJs", type: "Back end", LearnDay:50, active: true})
+
+##> db.devda.insertOne({name:"NodeJs", type: "Back end", LearnDay:50, active: true})
+
 {
         "acknowledged" : true,
         "insertedId" : ObjectId("62431bffe1aa0f77386d045b")
 }
-> db.devda.find().pretty()
+
+##> db.devda.find().pretty()
+
 {
         "_id" : ObjectId("62431838e1aa0f77386d045a"),
         "name" : "ReactJs",
@@ -181,7 +197,9 @@ devda
                 ObjectId("62431db1e1aa0f77386d045e")
         ]
 }
-> db.devda.find().pretty()
+
+##> db.devda.find().pretty()
+
 {
         "_id" : ObjectId("62431838e1aa0f77386d045a"),
         "name" : "ReactJs",
@@ -217,7 +235,9 @@ devda
         "LearnDay" : 30,
         "active" : true
 }
-> db.devda.find()         
+
+##> db.devda.find()         
+
 { "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : true }
 { "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Web language", "LearnDay" : 300, "active" : true }
@@ -229,24 +249,29 @@ devda
 
 //Find/read
 
-> show dbs
+##> show dbs
 admin   0.000GB
 config  0.000GB
 devda   0.000GB
 ecom    0.000GB
 local   0.000GB
 shop    0.000GB
-> db
+##> db
 devda
-> show collections
+
+##> show collections
 devda
-> db.devda.find()
+
+##> db.devda.find()
+
 { "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : true }
 { "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Web language", "LearnDay" : 300, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045d"), "name" : "MongoDB", "type" : "DataBase", "LearnDay" : 180, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045e"), "name" : "Git", "type" : "GitHub", "LearnDay" : 30, "active" : true }
-> db.devda.find().pretty()
+
+##> db.devda.find().pretty()
+
 {
         "_id" : ObjectId("62431838e1aa0f77386d045a"),
         "name" : "ReactJs",
@@ -282,10 +307,12 @@ devda
         "LearnDay" : 30,
         "active" : true
 }
-> db.devda.find({name: "Mongodb"})
-> db.devda.find({name: "MongoDB"})
+##> db.devda.find({name: "Mongodb"})
+##> db.devda.find({name: "MongoDB"})
 { "_id" : ObjectId("62431db1e1aa0f77386d045d"), "name" : "MongoDB", "type" : "DataBase", "LearnDay" : 180, "active" : true }
-> db.devda.find({name: "MongoDB"}).pretty()
+
+##> db.devda.find({name: "MongoDB"}).pretty()
+
 {
         "_id" : ObjectId("62431db1e1aa0f77386d045d"),
         "name" : "MongoDB",
@@ -293,28 +320,42 @@ devda
         "LearnDay" : 180,
         "active" : true
 }
-> db.devda.find({name: "MongoDB"}, {name:1}).pretty()
+
+##> db.devda.find({name: "MongoDB"}, {name:1}).pretty()
+
 { "_id" : ObjectId("62431db1e1aa0f77386d045d"), "name" : "MongoDB" }
-> db.devda.find({name: "MongoDB"}, {name:1})         
+
+##> db.devda.find({name: "MongoDB"}, {name:1})         
+
 { "_id" : ObjectId("62431db1e1aa0f77386d045d"), "name" : "MongoDB" }
-> db.devda.find({active: true})             
+
+##> db.devda.find({active: true})             
+
 { "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : true }
 { "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Web language", "LearnDay" : 300, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045d"), "name" : "MongoDB", "type" : "DataBase", "LearnDay" : 180, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045e"), "name" : "Git", "type" : "GitHub", "LearnDay" : 30, "active" : true }
-> db.devda.find({active: true}).limit(1)
+
+##> db.devda.find({active: true}).limit(1)
+
 { "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : true }
-> db.devda.find({active: true}).limit(3)
+
+##> db.devda.find({active: true}).limit(3)
+
 { "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : true }
 { "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Web language", "LearnDay" : 300, "active" : true }
-> db.devda.find({active: true}).limit(4)
+
+##> db.devda.find({active: true}).limit(4)
+
 { "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : true }
 { "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Web language", "LearnDay" : 300, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045d"), "name" : "MongoDB", "type" : "DataBase", "LearnDay" : 180, "active" : true }
-> db.devda.findOne({active: true})      
+
+##> db.devda.findOne({active: true})      
+
 {
         "_id" : ObjectId("62431838e1aa0f77386d045a"),
         "name" : "ReactJs",
@@ -322,57 +363,81 @@ devda
         "learnDay" : 30,
         "active" : true
 }
-> db.devda.findFour({active: true})
+
+##> db.devda.findFour({active: true})
+
 uncaught exception: TypeError: db.devda.findFour is not a function :
 @(shell):1:1
-> db.devda.findtwo({active: true}) 
+
+##> db.devda.findtwo({active: true}) 
+
 uncaught exception: TypeError: db.devda.findtwo is not a function :
 @(shell):1:1
-> db.devda.findFifth({active: true})
+
+##> db.devda.findFifth({active: true})
+
 uncaught exception: TypeError: db.devda.findFifth is not a function :
 @(shell):1:1
-> db.devda.find({active: true}).limit(1).skip(1)
+
+##> db.devda.find({active: true}).limit(1).skip(1)
+
 { "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
-> db.devda.find({active: true}).limit(1).skip(2)
+
+##> db.devda.find({active: true}).limit(1).skip(2)
+
 { "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Web language", "LearnDay" : 300, "active" : true }
-> db.devda.find({active: true}).skip(1)         
+
+##> db.devda.find({active: true}).skip(1)         
+
 { "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Web language", "LearnDay" : 300, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045d"), "name" : "MongoDB", "type" : "DataBase", "LearnDay" : 180, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045e"), "name" : "Git", "type" : "GitHub", "LearnDay" : 30, "active" : true }
-> db.devda.find()                               
+
+##> db.devda.find()                               
+
 { "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : true }
 { "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Web language", "LearnDay" : 300, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045d"), "name" : "MongoDB", "type" : "DataBase", "LearnDay" : 180, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045e"), "name" : "Git", "type" : "GitHub", "LearnDay" : 30, "active" : true }
-> db.devda.find().skip(2)
+
+##> db.devda.find().skip(2)
+
 { "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Web language", "LearnDay" : 300, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045d"), "name" : "MongoDB", "type" : "DataBase", "LearnDay" : 180, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045e"), "name" : "Git", "type" : "GitHub", "LearnDay" : 30, "active" : true }
-> db.devda.find()        
+
+##> db.devda.find()        
+
 { "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : true }
 { "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Web language", "LearnDay" : 300, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045d"), "name" : "MongoDB", "type" : "DataBase", "LearnDay" : 180, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045e"), "name" : "Git", "type" : "GitHub", "LearnDay" : 30, "active" : true }
-> db.devda.find().limit(1).skip(1)              
+
+##> db.devda.find().limit(1).skip(1)              
+
 { "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
 
 
 //Update
-> show dbs
+
+##> show dbs
+
 admin   0.000GB
 config  0.000GB
 devda   0.000GB
 ecom    0.000GB
 local   0.000GB
 shop    0.000GB
-> db
+##> db //current database
 devda
-> show collections
+##> show collections
 devda
-> db.devda.find()
+
+##> db.devda.find()
+
 { "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : true }
 { "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Web language", "LearnDay" : 300, "active" : true }
@@ -380,7 +445,9 @@ devda
 { "_id" : ObjectId("62431db1e1aa0f77386d045e"), "name" : "Git", "type" : "GitHub", "LearnDay" : 30, "active" : true }
 > db.devda.updateOne({name: "JavaScript"}, {$set:{type:"Full Stack"}})
 { "acknowledged" : true, "matchedCount" : 0, "modifiedCount" : 0 }
-> db.devda.find()
+
+##> db.devda.find()
+
 { "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : true }
 { "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Web language", "LearnDay" : 300, "active" : true }
@@ -388,7 +455,9 @@ devda
 { "_id" : ObjectId("62431db1e1aa0f77386d045e"), "name" : "Git", "type" : "GitHub", "LearnDay" : 30, "active" : true }
 > db.devda.updateOne({name: "Java Script"}, {$set:{type:"Full Stack"}})
 { "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
-> db.devda.find()
+
+##> db.devda.find()
+
 { "_id" : ObjectId("62431838e1aa0f77386d045a"), "name" : "ReactJs", "type" : "Front End", "learnDay" : 30, "active" : true }
 { "_id" : ObjectId("62431bffe1aa0f77386d045b"), "name" : "NodeJs", "type" : "Back end", "LearnDay" : 50, "active" : true }
 { "_id" : ObjectId("62431db1e1aa0f77386d045c"), "name" : "Java Script", "type" : "Full Stack", "LearnDay" : 300, "active" : true }
