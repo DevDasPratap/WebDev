@@ -61,3 +61,27 @@ let s='i am pratap das';
         ans += s[i] + " ";
     }
     console.log(ans.slice(0,ans.length-1));
+
+
+// rev=(val)=>{
+// return val.split("").reverse().join("").split(" ").reverse().join(" ")
+// }
+// console.log(rev('Hi how are you'))
+
+// let str = "Welcome to my Website !";
+// console.log((str.split("").reverse().join("").split(" ").reverse().join(" ")));
+
+
+// function reverseString(input)
+// {
+//     var output = "";
+//     for(var i = input.length - 1; i >= 0; i--) {
+//         output +=  input[i];
+//     }
+//     return output;
+// }
+// console.log(reverseString('i am p das'))
+
+
+
+
