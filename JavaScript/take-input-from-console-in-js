@@ -1,0 +1,7 @@
+let addinput='';
+process.stdin.on('data', function(chunk){
+  addinput=addinput + chunk;
+})
+process.stdin.on('end', function(){
+  console.log(typeof parseInt(addinput));
+})
