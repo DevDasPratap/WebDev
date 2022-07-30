@@ -5,3 +5,17 @@ process.stdin.on('data', function(chunk){
 process.stdin.on('end', function(){
   console.log(typeof parseInt(addinput));
 })
+
+
+//or
+
+
+
+
+
+let addinput='';
+process.stdin.on('data', (chunk)=>addinput=addinput + chunk);
+process.stdin.on('end', ()=>{
+  console.log(typeof parseInt(addinput));
+  console.log( addinput);
+})
